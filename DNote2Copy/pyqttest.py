@@ -13,9 +13,12 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from xlrd import open_workbook
 
 
+
 from lxml import etree
 from pprint import pprint
 
+import os
+from shutil import copyfile
 
 sourcefilenames = ''
 outputfoldername = ''
@@ -36,6 +39,7 @@ class window(QWidget):
         self.labelSource = QLabel("Source : ")
         layout.addWidget(self.labelSource, 0, 0)
         self.textfilepath = QTextEdit()
+        self.textfilepath.setReadOnly(True)
         layout.addWidget(self.textfilepath, 0 , 1)
         self.buttonAdd = QPushButton("Add")
         self.buttonAdd.clicked.connect(self.getsourcefile)
@@ -44,20 +48,26 @@ class window(QWidget):
         self.labelOutput = QLabel("Output : ")
         layout.addWidget(self.labelOutput, 1, 0)
         self.textfolderpath = QTextEdit()
+        self.textfolderpath.setReadOnly(True)
         layout.addWidget(self.textfolderpath, 1, 1)
         self.buttonOutput = QPushButton("Add")
         self.buttonOutput.clicked.connect(self.getoutfolder)
         layout.addWidget(self.buttonOutput, 1, 2)
 
+        self.labelFileName = QLabel("File Name : ")
+        layout.addWidget(self.labelFileName, 2, 0)
+        self.textFileName = QTextEdit()
+        layout.addWidget(self.textFileName, 2, 1)
+
         self.buttonReset = QPushButton("Reset")
         self.buttonReset.clicked.connect(self.reset)
-        layout.addWidget(self.buttonReset, 2, 0)
+        layout.addWidget(self.buttonReset, 3, 0)
         self.buttonConvert = QPushButton("Convert")
         self.buttonConvert.clicked.connect(self.convert)
-        layout.addWidget(self.buttonConvert, 2, 1)
+        layout.addWidget(self.buttonConvert, 3, 1)
         self.buttonClose = QPushButton("Close")
         self.buttonClose.clicked.connect(self.close)
-        layout.addWidget(self.buttonClose, 2, 2)
+        layout.addWidget(self.buttonClose, 3, 2)
 
         self.setLayout(layout)
         self.setWindowTitle("Delivery Notes 2 Copy")
@@ -82,16 +92,17 @@ class window(QWidget):
     def convert(self):
         try:
             #orders = dn2c.readxls(self.textfilepath.toPlainText())
-
+            xlsfile = copyFile(self)
             try:
-                orders = readxls(str(self.textfilepath.toPlainText()))
+
+                orders = readxls(xlsfile)
                 docxfilename = str(orders[0][2][2]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][4][1]).replace('Sale Rep Name: ','').replace(' ','')
-                writedocxwithrealxls(str(self.textfolderpath.toPlainText()), docxfilename, orders)
+                writedocxwithrealxls(str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()), orders)
             except:
-                orders = parseHTML(str(self.textfilepath.toPlainText()))
+                orders = parseHTML(xlsfile)
                 docxfilename = str(orders[0][0][3][1]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][0][3][3]).replace('Sale Rep Name: ','').replace(' ','')
                 #dn2c.writedocx(self.textfolderpath.toPlainText(), docxfilename, orders)
-                writedocx(str(self.textfolderpath.toPlainText()), docxfilename, orders)
+                writedocx(str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()), orders)
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Successful")
@@ -107,8 +118,45 @@ class window(QWidget):
             msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
             msg.exec_()
 
+
+
+    def checkOutputFolderPath(self):
+        createnewfile = True
+        file_path = ''
+        if os.path.isfile('folderPath.sh'):
+            createnewfile = False
+            file = open('folderPath.sh', 'r')
+            file_path = file.read()
+            file.close()
+            if len(file_path) == 0:
+                file_path = createNewOutputFile(self)
+                self.textfolderpath.setText(file_path)
+        else:
+            #self.textfolderpath.setText(createNewOutputFile() + '\\')
+            file_path = createNewOutputFile(self)
+            self.textfolderpath.setText(file_path)
+        self.textfolderpath.setText(file_path)
+
     def close(self):
         sys.exit()
+
+def createNewOutputFile(self):
+    outputfoldername = QString()
+    outputfoldername = QFileDialog.getExistingDirectory(self, 'Output folder', '', QFileDialog.ShowDirsOnly)
+    #self.textfolderpath.setText(outputfoldername + '\\')
+    file = open('folderPath.sh', 'w')
+    file.write(outputfoldername + '/')
+    #file.write(outputfoldername + '\\')
+    file.close()
+    #return outputfoldername + '\\'
+    return outputfoldername + '/'
+
+def copyFile(self):
+    try:
+        copyfile(str(self.textfilepath.toPlainText()), os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.toPlainText()))))
+        return os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.toPlainText())))
+    except:
+        print tracback.format_exc()
 
 def readxls(file_path):
     wb = open_workbook(file_path, on_demand = True)
@@ -242,6 +290,7 @@ def parseHTML(path):
             if xls_doc:
                 data.append(xls_doc)
     return data
+
 
 
 def writedocx(file_path, filename, orders):
@@ -640,7 +689,9 @@ def writedocxwithrealxls(file_path, filename, orders):
 def main():
     app = QApplication(sys.argv)
     ex = window()
+    ex.checkOutputFolderPath()
     ex.show()
+
     sys.exit(app.exec_())
 
 if __name__ == '__main__':
