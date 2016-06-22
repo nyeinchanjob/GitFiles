@@ -92,23 +92,24 @@ class window(QWidget):
     def convert(self):
         try:
             #orders = dn2c.readxls(self.textfilepath.toPlainText())
-            xlsfile = copyFile(self)
-            try:
+            if checkFormData(self) == False:
+                xlsfile = copyFile(self)
+                try:
 
-                orders = readxls(xlsfile)
-                docxfilename = str(orders[0][2][2]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][4][1]).replace('Sale Rep Name: ','').replace(' ','')
-                writedocxwithrealxls(str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()), orders)
-            except:
-                orders = parseHTML(xlsfile)
-                docxfilename = str(orders[0][0][3][1]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][0][3][3]).replace('Sale Rep Name: ','').replace(' ','')
-                #dn2c.writedocx(self.textfolderpath.toPlainText(), docxfilename, orders)
-                writedocx(str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()), orders)
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Successful")
-            msg.setText("Convert Successfully! Check %s.docx file in selected folder (%s)" % (docxfilename, self.textfolderpath.toPlainText()))
-            msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-            msg.exec_()
+                    orders = readxls(xlsfile)
+                    docxfilename = str(orders[0][2][2]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][4][1]).replace('Sale Rep Name: ','').replace(' ','')
+                    writedocxwithrealxls(str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()), orders)
+                except:
+                    orders = parseHTML(xlsfile)
+                    docxfilename = str(orders[0][0][3][1]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][0][3][3]).replace('Sale Rep Name: ','').replace(' ','')
+                    #dn2c.writedocx(self.textfolderpath.toPlainText(), docxfilename, orders)
+                    writedocx(str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()), orders)
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Successful")
+                msg.setText("Convert Successfully! Check %s.docx file in selected folder (%s)" % (str(self.textFileName.toPlainText()), self.textfolderpath.toPlainText()))
+                msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+                msg.exec_()
         except:
             print traceback.format_exc()
             msg = QMessageBox()
@@ -139,6 +140,26 @@ class window(QWidget):
 
     def close(self):
         sys.exit()
+
+def checkFormData(self):
+    foundError = False
+    msg = QMessageBox()
+    msg.setIcon(QMessageBox.Information)
+    msg.setWindowTitle("Required Data")
+    if len(str(self.textfilepath.toPlainText())) == 0:
+        foundError = True
+        self.buttonAdd.setFocus(True)
+        msg.setText("Source should not be Empty.")
+        msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec_()
+        return foundError
+    if len(str(self.textFileName.toPlainText())) == 0:
+        foundError = True
+        self.textFileName.setFocus(True)
+        msg.setText("File Name should not be Empty.")
+        msg.setStandardButtons(QMessageBox.Ok)
+        msg.exec_()
+        return foundError
 
 def createNewOutputFile(self):
     outputfoldername = QString()
