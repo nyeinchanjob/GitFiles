@@ -1,0 +1,2514 @@
+<div id="ctl00_contentQuery_ctl03_panelself" style="page-break-before: always;">
+	
+    <div id='pt5'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl03_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl03_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl03_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl03_lblCustomer">KAUNG YADANAR</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl03_lblCode">M2530390038096</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl03_lblAddress">47 "YGN-MDY RD,INFRONT OF UNIVERSIT</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl03_lblTelephone"></span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl03_lblOrderNo">44081606181554161</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl03_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl03_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl03_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl03_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl03_lblDriverMessage"></span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5761</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Cream Soda 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 8240
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5161</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Lemon Lime 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 8240
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5011</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Orange 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 8240
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1274</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 330ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1421</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 250ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">8</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 40320
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl03_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl03_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl03_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl03_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn5' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt5');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl06_panelself" style="page-break-before: always;">
+	
+    <div id='pt8'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl06_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl06_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl06_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl06_lblCustomer">KA BYAR NAT THAMEE</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl06_lblCode">M2530390038095</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl06_lblAddress">45 "YGN-MDY RD,INFRONT OF UNIVERSI</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl06_lblTelephone">052-2230732</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl06_lblOrderNo">44081606181556081</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl06_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl06_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl06_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl06_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl06_lblDriverMessage"></span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">7306</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">BURN 250 ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 19680
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1421</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 250ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">2122</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Sprite 250ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">4</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 31680
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl06_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl06_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl06_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl06_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn8' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt8');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl09_panelself" style="page-break-before: always;">
+	
+    <div id='pt10'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl09_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl09_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl09_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl09_lblCustomer">MINGALARBAR</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl09_lblCode">M2530390038117</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl09_lblAddress">A/2 UNIVERSITY COMPOUND</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl09_lblTelephone"></span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl09_lblOrderNo">44081606181558341</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl09_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl09_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl09_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl09_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl09_lblDriverMessage"></span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1274</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 330ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">7306</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">BURN 250 ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 19680
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">3</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 29280
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl09_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl09_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl09_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl09_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn10' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt10');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl12_panelself" style="page-break-before: always;">
+	
+    <div id='pt12'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl12_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl12_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl12_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl12_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl12_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl12_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl12_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl12_lblOrderNo">44081606181559421</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl12_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl12_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl12_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl12_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl12_lblDriverMessage">Win YaTaNar</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1274</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 330ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">7306</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">BURN 250 ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 19680
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">3</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 29280
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl12_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl12_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl12_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl12_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn12' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt12');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl15_panelself" style="page-break-before: always;">
+	
+    <div id='pt13'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl15_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl15_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl15_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl15_lblCustomer">WIN YADANAR -2</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl15_lblCode">M2530390038113</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl15_lblAddress">G UNIVERSITY COMPOUND</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl15_lblTelephone"></span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl15_lblOrderNo">44081606181600541</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl15_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl15_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl15_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl15_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl15_lblDriverMessage"></span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">7306</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">BURN 250 ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl15_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl15_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl15_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl15_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn13' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt13');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl18_panelself" style="page-break-before: always;">
+	
+    <div id='pt18'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl18_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl18_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl18_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl18_lblCustomer">NILAR YOMA</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl18_lblCode">M2530390038106</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl18_lblAddress">510 "YGN - MDY ROAD , NEAR TOLL GAT</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl18_lblTelephone"></span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl18_lblOrderNo">44081606181602251</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl18_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl18_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl18_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl18_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl18_lblDriverMessage"></span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5161</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Lemon Lime 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5011</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Orange 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1274</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 330ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">2145</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Sprite 330ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">7306</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">BURN 250 ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 19680
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">6</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 47120
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl18_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl18_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl18_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl18_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn18' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt18');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl21_panelself" style="page-break-before: always;">
+	
+    <div id='pt20'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl21_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl21_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl21_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl21_lblCustomer">TTM</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl21_lblCode">M2530390037987</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl21_lblAddress">11 "YGN-MDY RD, NYAUNG INN VILLAGE"</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl21_lblTelephone"></span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl21_lblOrderNo">44081606181604021</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl21_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl21_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl21_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl21_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl21_lblDriverMessage"></span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">7306</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">BURN 250 ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1108</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 1.5L 6 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4200
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4200
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 14040
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl21_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl21_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl21_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl21_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn20' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt20');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl24_panelself" style="page-break-before: always;">
+	
+    <div id='pt23'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl24_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl24_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl24_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl24_lblCustomer">GREAT ONE</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl24_lblCode">M2530390038120</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl24_lblAddress">A/5 UNIVERSITY COMPOUND</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl24_lblTelephone"></span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl24_lblOrderNo">44081606181605151</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl24_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl24_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl24_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl24_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl24_lblDriverMessage">Nwae (Tike kyee street)</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5011</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Orange 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">7306</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">BURN 250 ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1421</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 250ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">3</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 19960
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl24_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl24_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl24_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl24_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn23' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt23');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl27_panelself" style="page-break-before: always;">
+	
+    <div id='pt25'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl27_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl27_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl27_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl27_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl27_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl27_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl27_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl27_lblOrderNo">44081606181608141</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl27_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl27_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl27_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl27_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl27_lblDriverMessage">Young Gyi Oo</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1274</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 330ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">7306</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">BURN 250 ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 19680
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">3</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 29280
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl27_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl27_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl27_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl27_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn25' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt25');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl30_panelself" style="page-break-before: always;">
+	
+    <div id='pt30'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl30_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl30_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl30_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl30_lblCustomer">AYE YAR AYE GYAUNG</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl30_lblCode">M2530390037996</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl30_lblAddress">39 "YGN-MDY RD, NYAUNG INN VILLAGE"</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl30_lblTelephone"></span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl30_lblOrderNo">44081606181609391</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl30_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl30_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl30_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl30_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl30_lblDriverMessage"></span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5761</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Cream Soda 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5161</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Lemon Lime 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5661</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Lychee 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5011</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Orange 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">4297</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 425ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4080
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4080
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">5</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 20560
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl30_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl30_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl30_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl30_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn30' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt30');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl33_panelself" style="page-break-before: always;">
+	
+    <div id='pt31'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl33_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl33_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl33_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl33_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl33_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl33_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl33_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl33_lblOrderNo">44081606181611111</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl33_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl33_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl33_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl33_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl33_lblDriverMessage">Shwe Shan Lay</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">2145</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Sprite 330ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl33_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl33_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl33_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl33_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn31' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt31');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl36_panelself" style="page-break-before: always;">
+	
+    <div id='pt32'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl36_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl36_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl36_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl36_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl36_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl36_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl36_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl36_lblOrderNo">44081606181612421</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl36_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl36_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl36_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl36_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl36_lblDriverMessage">Hla Myat (myoe Shount lan)</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1274</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 330ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl36_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl36_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl36_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl36_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn32' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt32');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl39_panelself" style="page-break-before: always;">
+	
+    <div id='pt39'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl39_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl39_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl39_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl39_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl39_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl39_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl39_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl39_lblOrderNo">44081606181616501</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl39_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl39_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl39_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl39_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl39_lblDriverMessage">Shwe Myint Mo (Myo Shount Lan)</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5179</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Lemon Lime 285ml 24 RGB</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4560
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4560
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5761</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Cream Soda 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 8240
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5161</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Lemon Lime 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">3</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 12360
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5661</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Lychee 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">2</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 8240
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5011</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Orange 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">3</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 12360
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">3009</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Fanta Orange 330ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">7306</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">BURN 250 ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 9840
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">13</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 65200
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl39_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl39_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl39_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl39_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn39' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt39');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl42_panelself" style="page-break-before: always;">
+	
+    <div id='pt40'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl42_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl42_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl42_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl42_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl42_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl42_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl42_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl42_lblOrderNo">44081606181618221</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl42_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl42_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl42_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl42_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl42_lblDriverMessage">Shwe Myint Mo (F.O.C)</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">4601</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max2O Water 1L 6 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 1200
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 1200
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 1200
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl42_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl42_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl42_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl42_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn40' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt40');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl45_panelself" style="page-break-before: always;">
+	
+    <div id='pt43'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl45_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl45_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl45_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl45_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl45_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl45_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl45_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl45_lblOrderNo">44081606181620371</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl45_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl45_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl45_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl45_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl45_lblDriverMessage">Kaung Kaung (Pin Se)</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5161</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Lemon Lime 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">20</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 82400
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5011</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Orange 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">30</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 123600
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">4297</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 425ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">10</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4080
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 40800
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">60</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 246800
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl45_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl45_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl45_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl45_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn43' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt43');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl48_panelself" style="page-break-before: always;">
+	
+    <div id='pt45'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl48_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl48_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl48_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl48_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl48_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl48_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl48_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl48_lblOrderNo">44081606181623191</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl48_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl48_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl48_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl48_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl48_lblDriverMessage">Kaung Kaung (F.O.C)</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">4601</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max2O Water 1L 6 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 1200
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 1200
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5161</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Lemon Lime 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">3</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 12360
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">4</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 13560
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl48_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl48_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl48_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl48_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn45' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt45');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl51_panelself" style="page-break-before: always;">
+	
+    <div id='pt49'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl51_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl51_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl51_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl51_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl51_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl51_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl51_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl51_lblOrderNo">44081606181625021</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl51_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl51_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl51_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl51_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl51_lblDriverMessage">Han Win Aung (Kyte pon)</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5161</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Lemon Lime 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">5011</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Max Plus Orange 500ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4120
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">4297</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 425ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4080
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4080
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">1421</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 250ml 24 C</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 6000
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">4</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 18320
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl51_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl51_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl51_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl51_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn49' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt49');"/>
+    </div>
+
+</div>
+<br />
+<div id="ctl00_contentQuery_ctl54_panelself" style="page-break-before: always;">
+	
+    <div id='pt50'>
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td colspan="3" align="center" height="25px" style="text-align: center; font-size: 16px; font-weight: bold;">Delivery Notes
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30%; text-align: left; vertical-align: top">
+                <span id="ctl00_contentQuery_ctl54_lblChainName">U TUN WIN AUNG</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl54_lblChainAddress">129/B TAPIN SHWE HTEE RD, 4th BAGO TOWNSHIP MON</span>
+                <br />
+                <span id="ctl00_contentQuery_ctl54_lblChainTel"></span>
+                <br />
+                <br />
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top">Customer Name:
+                <span id="ctl00_contentQuery_ctl54_lblCustomer">Generic</span>
+                <br />
+                Custmer Code:
+                <span id="ctl00_contentQuery_ctl54_lblCode">M2530390030001</span>
+                <br />
+                Customer Adds:
+                <span id="ctl00_contentQuery_ctl54_lblAddress">Generic Address</span>
+                <br />
+                Telephone Number:<span id="ctl00_contentQuery_ctl54_lblTelephone">0</span>
+            </td>
+            <td style="width: 30%; text-align: left; vertical-align: top;">
+                <nobr> Order Number: <span id="ctl00_contentQuery_ctl54_lblOrderNo">44081606181626091</span></nobr>
+                <br />
+                Delivery Date:
+                <span id="ctl00_contentQuery_ctl54_lblDeliveryDate">19.06.16</span>
+                <br />
+                Geo Code:
+                <span id="ctl00_contentQuery_ctl54_lblGeoCode">M01AC</span>
+                <br />
+                Sale Rep Name:
+                <span id="ctl00_contentQuery_ctl54_lblSalesRep">MIn Aung Thu</span>
+                <br />
+                Tel:<span id="ctl00_contentQuery_ctl54_lblTel"></span>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align: left; vertical-align: top">Driver Message:<span id="ctl00_contentQuery_ctl54_lblDriverMessage">Pan Young (kyte pon)</span>
+            </td>
+        </tr>
+        
+    </table>
+    <br />
+    <table style="font-size: 15px;" width="700px">
+        <tr>
+            <td>
+                <div>
+		<table cellspacing="0" cellpadding="0" border="0" id="gvOrderList" style="border-color:Black;border-width:1px;border-style:Solid;font-size:15px;width:100%;border-collapse:collapse;">
+			<tr align="left">
+				<th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Code</th><th align="left" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Product Name</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">UOM</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Quantity</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Unit Price</th><th align="center" scope="col" style="border-color:Black;border-width:1px;border-style:Solid;">Amount</th>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">4297</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Coke 425ml 12 S/W NP</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">CS</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4080
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4080
+                            </td>
+			</tr><tr>
+				<td style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">&nbsp;</td><td style="border-color:Black;border-width:1px;border-style:Solid;white-space:nowrap;">Total Products:</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">&nbsp;</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:10%;white-space:nowrap;">1</td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                
+                            </td><td align="center" style="border-color:Black;border-width:1px;border-style:Solid;width:15%;white-space:nowrap;">
+                                 4080
+                            </td>
+			</tr>
+		</table>
+	</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; font-size: 15px">
+                    <tr>
+                        <td></td>
+
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl54_lblVat"></span>
+                        </td>
+                        <td align="right" style="width: 70%">
+                            <span id="ctl00_contentQuery_ctl54_lblTotalTax">Above price already included 5% commercial tax</span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="center" style="width: 25%">&nbsp;<span id="ctl00_contentQuery_ctl54_LabelTotal"></span>
+                        </td>
+
+                        <td align="center" style="width: 15%">
+                            <span id="ctl00_contentQuery_ctl54_lblAfterTax"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="font-size; 15px; width: 700px">
+        <tr>
+            <td>
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <br />
+                            The Buyer&nbsp;&nbsp;__________________
+                            <br />
+                        </td>
+                        <td align="right">
+                            <br />
+                            The Seller&nbsp;&nbsp;__________________<br />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id='printbtn' style='text-align: center;'>
+         <input id='btn50' type='button' class='wsd_button2' value=Print onclick="printPage_MM('pt50');"/>
+    </div>
+
+</div>
+<br />
