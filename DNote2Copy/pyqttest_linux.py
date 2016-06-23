@@ -24,12 +24,6 @@ sourcefilenames = ''
 outputfoldername = ''
 docxfilename = ''
 
-document = Document()
-style = document.styles['Normal']
-font = style.font
-font.name = 'Times New Roman'
-font.size = Pt(8)
-
 class window(QWidget):
     def __init__(self, parent = None):
         super(window, self).__init__(parent)
@@ -152,14 +146,13 @@ def checkFormData(self):
         msg.setText("Source should not be Empty.")
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
-        return foundError
     if len(str(self.textFileName.toPlainText())) == 0:
         foundError = True
         self.textFileName.setFocus(True)
         msg.setText("File Name should not be Empty.")
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
-        return foundError
+    return foundError
 
 def createNewOutputFile(self):
     outputfoldername = QString()
@@ -174,10 +167,21 @@ def createNewOutputFile(self):
 
 def copyFile(self):
     try:
-        shutil.move(str(self.textfilepath.toPlainText()), str(self.textfolderpath.toPlainText()) + '%s.xls' % (str(self.textFileName.toPlainText())))
+        shutil.move(
+            str(
+                self.textfilepath.toPlainText()
+                ),
+            str(
+                self.textfolderpath.toPlainText()
+                )+'%s.xls' % (
+                    str(
+                        self.textFileName.toPlainText()
+                        )
+                    )
+            )
         return os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.toPlainText())))
-    except:
-        print tracback.format_exc()
+    except shutil.Error as e:
+        print('Error: %s' % e)
 
 def readxls(file_path):
     wb = open_workbook(file_path, on_demand = True)
@@ -315,15 +319,20 @@ def parseHTML(path):
 
 
 def writedocx(file_path, filename, orders):
+    document = Document()
+    style = document.styles['Normal']
+    font = style.font
+    font.name = 'Times New Roman'
+    font.size = Pt(9)
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
         section.page_width = Mm(297) # for A4 Paper
         section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.3)
-        section.right_margin = Inches(0.3)
-        section.top_margin = Inches(0.5)
-        section.bottom_margin = Inches(0.5)
+        section.left_margin = Inches(0.1)
+        section.right_margin = Inches(0.1)
+        section.top_margin = Inches(0.1)
+        section.bottom_margin = Inches(0.1)
 
     for item in orders:
         print item
@@ -526,16 +535,20 @@ def writedocx(file_path, filename, orders):
 
 
 def writedocxwithrealxls(file_path, filename, orders):
-
+    document = Document()
+    style = document.styles['Normal']
+    font = style.font
+    font.name = 'Times New Roman'
+    font.size = Pt(9)
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
         section.page_width = Mm(297) # for A4 Paper
         section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.3)
-        section.right_margin = Inches(0.3)
-        section.top_margin = Inches(0.5)
-        section.bottom_margin = Inches(0.5)
+        section.left_margin = Inches(0.1)
+        section.right_margin = Inches(0.1)
+        section.top_margin = Inches(0.1)
+        section.bottom_margin = Inches(0.1)
 
 
     for item in orders:
@@ -712,7 +725,6 @@ def main():
     ex = window()
     ex.checkOutputFolderPath()
     ex.show()
-
     sys.exit(app.exec_())
 
 if __name__ == '__main__':

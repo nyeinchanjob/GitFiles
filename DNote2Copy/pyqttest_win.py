@@ -86,7 +86,7 @@ class window(QWidget):
         #file.write(outputfoldername + '/')
         file.write(outputfoldername.replace('\\', '\\\\') + '\\\\')
         file.close()
-        
+
 
     def reset(self):
         self.textfilepath.setText('')
@@ -114,7 +114,7 @@ class window(QWidget):
                 msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                 msg.setDefaultButton(QMessageBox.Yes)
                 if (msg.exec_() == QMessageBox.Yes):
-                            openMSWords('%s%s.docx' % (str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()))) 
+                            openMSWords('%s%s.docx' % (str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText())))
         except:
             print traceback.format_exc()
             msg = QMessageBox()
@@ -346,10 +346,10 @@ def writedocx(file_path, filename, orders):
         section.page_width = Mm(297) # for A4 Paper
         section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.3)
-        section.right_margin = Inches(0.3)
-        section.top_margin = Inches(0.5)
-        section.bottom_margin = Inches(0.5)
+        section.left_margin = Inches(0.1)
+        section.right_margin = Inches(0.1)
+        section.top_margin = Inches(0.1)
+        section.bottom_margin = Inches(0.1)
 
     for item in orders:
         print item
@@ -562,10 +562,10 @@ def writedocxwithrealxls(file_path, filename, orders):
         section.page_width = Mm(297) # for A4 Paper
         section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.3)
-        section.right_margin = Inches(0.3)
-        section.top_margin = Inches(0.5)
-        section.bottom_margin = Inches(0.5)
+        section.left_margin = Inches(0.1)
+        section.right_margin = Inches(0.1)
+        section.top_margin = Inches(0.1)
+        section.bottom_margin = Inches(0.1)
 
 
     for item in orders:
