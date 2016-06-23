@@ -18,17 +18,14 @@ from lxml import etree
 from pprint import pprint
 
 import os
-from shutil import copyfile
+import shutil
+import win32api
 
 sourcefilenames = ''
 outputfoldername = ''
 docxfilename = ''
 
-document = Document()
-style = document.styles['Normal']
-font = style.font
-font.name = 'Times New Roman'
-font.size = Pt(8)
+
 
 class window(QWidget):
     def __init__(self, parent = None):
@@ -76,18 +73,25 @@ class window(QWidget):
     def getsourcefile(self):
         filename = QString()
         filename = QFileDialog.getOpenFileName(self, 'Source file', '', 'Excel 97-2003 file (*.xls)')
-        #self.textfilepath.setText(filename.replace('/','\\\\'))
-        self.textfilepath.setText(filename)
+        self.textfilepath.setText(filename.replace('/','\\\\'))
+        #self.textfilepath.setText(filename)
 
     def getoutfolder(self):
         outputfoldername = QString()
         outputfoldername = QFileDialog.getExistingDirectory(self, 'Output folder', '', QFileDialog.ShowDirsOnly)
+        self.textfolderpath.setText(outputfoldername.replace('\\', '\\\\') + '\\\\')
+        #self.textfolderpath.setText(outputfoldername + '/')
         #self.textfolderpath.setText(outputfoldername + '\\')
-        self.textfolderpath.setText(outputfoldername + '/')
+        file = open('folderPath.sh', 'w')
+        #file.write(outputfoldername + '/')
+        file.write(outputfoldername.replace('\\', '\\\\') + '\\\\')
+        file.close()
+        
 
     def reset(self):
         self.textfilepath.setText('')
-        self.textfolderpath.setText('')
+        #self.textfolderpath.setText('')
+        self.textFileName.setText('')
 
     def convert(self):
         try:
@@ -95,7 +99,6 @@ class window(QWidget):
             if checkFormData(self) == False:
                 xlsfile = copyFile(self)
                 try:
-
                     orders = readxls(xlsfile)
                     docxfilename = str(orders[0][2][2]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][4][1]).replace('Sale Rep Name: ','').replace(' ','')
                     writedocxwithrealxls(str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()), orders)
@@ -107,9 +110,11 @@ class window(QWidget):
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
                 msg.setWindowTitle("Successful")
-                msg.setText("Convert Successfully! Check %s.docx file in selected folder (%s)" % (str(self.textFileName.toPlainText()), self.textfolderpath.toPlainText()))
-                msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-                msg.exec_()
+                msg.setText("Convert Successfully! Do you want to open %s.docx file " % (str(self.textFileName.toPlainText())))
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                msg.setDefaultButton(QMessageBox.Yes)
+                if (msg.exec_() == QMessageBox.Yes):
+                            openMSWords('%s%s.docx' % (str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()))) 
         except:
             print traceback.format_exc()
             msg = QMessageBox()
@@ -152,32 +157,48 @@ def checkFormData(self):
         msg.setText("Source should not be Empty.")
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
-        return foundError
     if len(str(self.textFileName.toPlainText())) == 0:
         foundError = True
         self.textFileName.setFocus(True)
         msg.setText("File Name should not be Empty.")
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
-        return foundError
+    return foundError
 
 def createNewOutputFile(self):
     outputfoldername = QString()
     outputfoldername = QFileDialog.getExistingDirectory(self, 'Output folder', '', QFileDialog.ShowDirsOnly)
     #self.textfolderpath.setText(outputfoldername + '\\')
     file = open('folderPath.sh', 'w')
-    file.write(outputfoldername + '/')
-    #file.write(outputfoldername + '\\')
+    #file.write(outputfoldername + '/')
+    file.write(outputfoldername.replace('\\', '\\\\') + '\\\\')
     file.close()
-    #return outputfoldername + '\\'
-    return outputfoldername + '/'
+    return outputfoldername + '\\\\'
+    #return outputfoldername + '/'
 
 def copyFile(self):
     try:
-        copyfile(str(self.textfilepath.toPlainText()), os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.toPlainText()))))
+        shutil.move(
+            str(
+                self.textfilepath.toPlainText()
+                ),
+            str(
+                self.textfolderpath.toPlainText()
+                )+'%s.xls' % (
+                    str(
+                        self.textFileName.toPlainText()
+                        )
+                    )
+            )
         return os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.toPlainText())))
+    except shutil.Error as e:
+        print('Error: %s' % e)
+
+def openMSWords(file_path):
+    try:
+        win32api.ShellExecute(0, 'open', file_path, '', '', 1)
     except:
-        print tracback.format_exc()
+        print "Unexpected error:", sys.exc_info()[0]
 
 def readxls(file_path):
     wb = open_workbook(file_path, on_demand = True)
@@ -315,6 +336,11 @@ def parseHTML(path):
 
 
 def writedocx(file_path, filename, orders):
+    document = Document()
+    style = document.styles['Normal']
+    font = style.font
+    font.name = 'Times New Roman'
+    font.size = Pt(9)
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
         section.page_width = Mm(297) # for A4 Paper
@@ -526,7 +552,11 @@ def writedocx(file_path, filename, orders):
 
 
 def writedocxwithrealxls(file_path, filename, orders):
-
+    document = Document()
+    style = document.styles['Normal']
+    font = style.font
+    font.name = 'Times New Roman'
+    font.size = Pt(9)
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
         section.page_width = Mm(297) # for A4 Paper
