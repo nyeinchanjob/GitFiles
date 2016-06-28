@@ -1,1 +1,1 @@
-D:\Development\DNote2Copy\
+/media/nyeinchan/601C16171C15E8B4/Document/RunDNote2/

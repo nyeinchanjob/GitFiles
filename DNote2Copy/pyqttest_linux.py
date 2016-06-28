@@ -331,33 +331,33 @@ def writedocx(file_path, filename, orders):
     font.size = Pt(9)
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
-        section.page_width = Mm(297) # for A4 Paper
+        section.page_width = Mm(148) # for A4 Paper
         section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.1)
-        section.right_margin = Inches(0.1)
-        section.top_margin = Inches(0.1)
-        section.bottom_margin = Inches(0.1)
+        section.left_margin = Inches(0.2)
+        section.right_margin = Inches(0.2)
+        section.top_margin = Inches(0.5)
+        section.bottom_margin = Inches(0.5)
 
     for item in orders:
         print item
         table = document.add_table(rows=0, cols=16)
-        table.columns[0].width = Inches(0.44)
-        table.columns[1].width = Inches(0.75)
-        table.columns[2].width = Inches(2)
+        table.columns[0].width = Inches(0.45)
+        table.columns[1].width = Inches(1.25)
+        table.columns[2].width = Inches(1.65)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
         table.columns[6].width = Inches(0.75)
-        table.columns[7].width = Inches(0.1)
-        table.columns[8].width = Inches(0.1)
-        table.columns[9].width = Inches(0.44)
-        table.columns[10].width = Inches(0.75)
-        table.columns[11].width = Inches(2)
-        table.columns[12].width = Inches(0.50)
-        table.columns[13].width = Inches(0.55)
-        table.columns[14].width = Inches(0.65)
-        table.columns[15].width = Inches(0.75)
+        # table.columns[7].width = Inches(0.05)
+        # table.columns[8].width = Inches(0.05)
+        # table.columns[9].width = Inches(0.45)
+        # table.columns[10].width = Inches(1.25)
+        # table.columns[11].width = Inches(1.65)
+        # table.columns[12].width = Inches(0.50)
+        # table.columns[13].width = Inches(0.55)
+        # table.columns[14].width = Inches(0.65)
+        # table.columns[15].width = Inches(0.75)
 
         #Delivery Notes Title
         row_one = table.add_row().cells
@@ -368,9 +368,9 @@ def writedocx(file_path, filename, orders):
 
         # Copy
         #row_one[9].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_one[9].merge(row_one[15])
-        row_one[9].paragraphs[0].add_run(item[0][0]).bold = True
-        row_one[9].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_one[9].merge(row_one[15])
+        # row_one[9].paragraphs[0].add_run(item[0][0]).bold = True
+        # row_one[9].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
         #Distributor Name, Customer Name, Order Number
         row_two = table.add_row().cells
@@ -392,23 +392,23 @@ def writedocx(file_path, filename, orders):
         row_two[3].paragraphs[0].add_run('\n' + 'Sales Rep Name : ' + item[0][3][3])
         row_two[3].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
         #Copy
-        row_two[9].merge(row_two[10])
-        row_two[9].text = item[0][1][0]
-        row_two[9].paragraphs[0].add_run('\n' + item[0][1][1])
-        row_two[11].text = 'Customer Name : '
-        row_two[11].paragraphs[0].bold = True
-        row_two[11].paragraphs[0].add_run(item[0][2][0])
-        row_two[11].paragraphs[0].add_run('\n' + 'Code :' + item[0][2][1])
-        row_two[11].paragraphs[0].add_run('\n' + 'Address : ' + item[0][2][2])
-        row_two[11].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][2][3])
-        row_two[12].merge(row_two[15])
-        row_two[12].text = 'Order Number : '
-        row_two[12].paragraphs[0].bold = True
-        row_two[12].paragraphs[0].add_run(item[0][3][0])
-        row_two[12].paragraphs[0].add_run('\n' + 'Delivery Date : ' + item[0][3][1])
-        row_two[12].paragraphs[0].add_run('\n' + 'Geo Code : ' + item[0][3][2])
-        row_two[12].paragraphs[0].add_run('\n' + 'Sales Rep Name : ' + item[0][3][3])
-        row_two[0].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
+        # row_two[9].merge(row_two[10])
+        # row_two[9].text = item[0][1][0]
+        # row_two[9].paragraphs[0].add_run('\n' + item[0][1][1])
+        # row_two[11].text = 'Customer Name : '
+        # row_two[11].paragraphs[0].bold = True
+        # row_two[11].paragraphs[0].add_run(item[0][2][0])
+        # row_two[11].paragraphs[0].add_run('\n' + 'Code :' + item[0][2][1])
+        # row_two[11].paragraphs[0].add_run('\n' + 'Address : ' + item[0][2][2])
+        # row_two[11].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][2][3])
+        # row_two[12].merge(row_two[15])
+        # row_two[12].text = 'Order Number : '
+        # row_two[12].paragraphs[0].bold = True
+        # row_two[12].paragraphs[0].add_run(item[0][3][0])
+        # row_two[12].paragraphs[0].add_run('\n' + 'Delivery Date : ' + item[0][3][1])
+        # row_two[12].paragraphs[0].add_run('\n' + 'Geo Code : ' + item[0][3][2])
+        # row_two[12].paragraphs[0].add_run('\n' + 'Sales Rep Name : ' + item[0][3][3])
+        # row_two[12].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
         #Driver Message
         row_seven = table.add_row().cells
         row_seven[0].merge(row_seven[6])
@@ -421,8 +421,8 @@ def writedocx(file_path, filename, orders):
         row_nine[0].merge(row_nine[6])
         row_table1 = row_nine[0].add_table(rows=0, cols=6)
         row_table1.style = 'TableGrid'
-        row_table1.columns[0].width = Inches(0.44)
-        row_table1.columns[1].width = Inches(2.35)
+        row_table1.columns[0].width = Inches(0.45)
+        row_table1.columns[1].width = Inches(2.45)
         row_table1.columns[2].width = Inches(0.50)
         row_table1.columns[3].width = Inches(0.55)
         row_table1.columns[4].width = Inches(0.65)
@@ -443,30 +443,30 @@ def writedocx(file_path, filename, orders):
         row_table_cells1[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         row_table_cells1[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         #Copy
-        row_nine[9].merge(row_nine[15])
-        row_table2 = row_nine[9].add_table(rows=0, cols=6)
-        row_table2.style = 'TableGrid'
-        row_table2.columns[0].width = Inches(0.44)
-        row_table2.columns[1].width = Inches(2.35)
-        row_table2.columns[2].width = Inches(0.50)
-        row_table2.columns[3].width = Inches(0.55)
-        row_table2.columns[4].width = Inches(0.65)
-        row_table2.columns[5].width = Inches(0.75)
-        row_table_cells2 = row_table2.add_row().cells
-        row_table_cells2[0].paragraphs[0].add_run('Code').bold = True
-        #row_table_cells2[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        #row_table_cells2[1].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[1].paragraphs[0].add_run('Description').bold = True
-        row_table_cells2[2].paragraphs[0].add_run('UOM').bold = True
-        row_table_cells2[3].paragraphs[0].add_run('QTY').bold = True
-        row_table_cells2[4].paragraphs[0].add_run('Price').bold = True
-        row_table_cells2[5].paragraphs[0].add_run('Amount').bold = True
-        row_table_cells2[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[2].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_nine[9].merge(row_nine[15])
+        # row_table2 = row_nine[9].add_table(rows=0, cols=6)
+        # row_table2.style = 'TableGrid'
+        # row_table2.columns[0].width = Inches(0.45)
+        # row_table2.columns[1].width = Inches(2.0)
+        # row_table2.columns[2].width = Inches(0.50)
+        # row_table2.columns[3].width = Inches(0.55)
+        # row_table2.columns[4].width = Inches(0.65)
+        # row_table2.columns[5].width = Inches(0.75)
+        # row_table_cells2 = row_table2.add_row().cells
+        # row_table_cells2[0].paragraphs[0].add_run('Code').bold = True
+        # #row_table_cells2[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # #row_table_cells2[1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_table_cells2[1].paragraphs[0].add_run('Description').bold = True
+        # row_table_cells2[2].paragraphs[0].add_run('UOM').bold = True
+        # row_table_cells2[3].paragraphs[0].add_run('QTY').bold = True
+        # row_table_cells2[4].paragraphs[0].add_run('Price').bold = True
+        # row_table_cells2[5].paragraphs[0].add_run('Amount').bold = True
+        # row_table_cells2[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_table_cells2[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_table_cells2[2].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_table_cells2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_table_cells2[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_table_cells2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
         for products in item[1]:
             #Product Detail
@@ -481,16 +481,16 @@ def writedocx(file_path, filename, orders):
             row_product1[5].text = str(products[5]).replace('.0','')
             row_product1[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
             #Copy
-            row_product2 = row_table2.add_row().cells
-            row_product2[0].text = str(products[0]).replace('.0','')
-            row_product2[1].text = str(products[1])
-            row_product2[2].text = str(products[2])
-            row_product2[3].text = str(products[3]).replace('.0','')
-            row_product2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
-            row_product2[4].text = str(products[4]).replace('.0','')
-            row_product2[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
-            row_product2[5].text = str(products[5]).replace('.0','')
-            row_product2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+            # row_product2 = row_table2.add_row().cells
+            # row_product2[0].text = str(products[0]).replace('.0','')
+            # row_product2[1].text = str(products[1])
+            # row_product2[2].text = str(products[2])
+            # row_product2[3].text = str(products[3]).replace('.0','')
+            # row_product2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+            # row_product2[4].text = str(products[4]).replace('.0','')
+            # row_product2[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+            # row_product2[5].text = str(products[5]).replace('.0','')
+            # row_product2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
         #Total Products
         row_eleven1 = row_table1.add_row().cells
@@ -503,23 +503,23 @@ def writedocx(file_path, filename, orders):
         row_eleven1[5].text = str(item[2][2]).replace('.0','')
         row_eleven1[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
         #Copy
-        row_eleven2 = row_table2.add_row().cells
-        row_eleven2[0].text = ''
-        row_eleven2[1].text = item[2][0]
-        row_eleven2[2].text = ''
-        row_eleven2[3].text = str(item[2][1]).replace('.0','')
-        row_eleven2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
-        row_eleven2[4].text = ''
-        row_eleven2[5].text = str(item[2][2]).replace('.0','')
-        row_eleven2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        # row_eleven2 = row_table2.add_row().cells
+        # row_eleven2[0].text = ''
+        # row_eleven2[1].text = item[2][0]
+        # row_eleven2[2].text = ''
+        # row_eleven2[3].text = str(item[2][1]).replace('.0','')
+        # row_eleven2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        # row_eleven2[4].text = ''
+        # row_eleven2[5].text = str(item[2][2]).replace('.0','')
+        # row_eleven2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
         #Tax Informaiton
         row_twelve = table.add_row().cells
         row_twelve[0].merge(row_twelve[6])
         row_twelve[0].text = item[3]
         #Copy
-        row_twelve[9].merge(row_twelve[15])
-        row_twelve[9].text = item[3]
+        # row_twelve[9].merge(row_twelve[15])
+        # row_twelve[9].text = item[3]
 
         row_thirteen = table.add_row().cells
         row_fourteen = table.add_row().cells
@@ -531,10 +531,10 @@ def writedocx(file_path, filename, orders):
         row_sixteen[4].merge(row_sixteen[6])
         row_sixteen[4].text = item[4][1]
         #Copy
-        row_sixteen[9].merge(row_sixteen[11])
-        row_sixteen[9].text = item[4][0]
-        row_sixteen[13].merge(row_sixteen[15])
-        row_sixteen[13].text = item[4][1]
+        # row_sixteen[9].merge(row_sixteen[11])
+        # row_sixteen[9].text = item[4][0]
+        # row_sixteen[13].merge(row_sixteen[15])
+        # row_sixteen[13].text = item[4][1]
         document.add_page_break()
     document.save('%s%s.docx' % (file_path, filename))
 
@@ -547,33 +547,33 @@ def writedocxwithrealxls(file_path, filename, orders):
     font.size = Pt(9)
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
-        section.page_width = Mm(297) # for A4 Paper
+        section.page_width = Mm(148) # for A4 Paper
         section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.1)
-        section.right_margin = Inches(0.1)
-        section.top_margin = Inches(0.1)
-        section.bottom_margin = Inches(0.1)
+        section.left_margin = Inches(0.2)
+        section.right_margin = Inches(0.2)
+        section.top_margin = Inches(0.5)
+        section.bottom_margin = Inches(0.5)
 
 
     for item in orders:
         table = document.add_table(rows=0, cols=16)
-        table.columns[0].width = Inches(0.44)
-        table.columns[1].width = Inches(0.75)
-        table.columns[2].width = Inches(2)
+        table.columns[0].width = Inches(0.45)
+        table.columns[1].width = Inches(1.25)
+        table.columns[2].width = Inches(1.65)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
         table.columns[6].width = Inches(0.75)
-        table.columns[7].width = Inches(0.1)
-        table.columns[8].width = Inches(0.1)
-        table.columns[9].width = Inches(0.44)
-        table.columns[10].width = Inches(0.75)
-        table.columns[11].width = Inches(2)
-        table.columns[12].width = Inches(0.50)
-        table.columns[13].width = Inches(0.55)
-        table.columns[14].width = Inches(0.65)
-        table.columns[15].width = Inches(0.75)
+        # table.columns[7].width = Inches(0.05)
+        # table.columns[8].width = Inches(0.05)
+        # table.columns[9].width = Inches(0.45)
+        # table.columns[10].width = Inches(1.25)
+        # table.columns[11].width = Inches(1.65)
+        # table.columns[12].width = Inches(0.50)
+        # table.columns[13].width = Inches(0.55)
+        # table.columns[14].width = Inches(0.65)
+        # table.columns[15].width = Inches(0.75)
 
 
         #Delivery Notes Title
@@ -583,9 +583,9 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_one[0].paragraphs[0].add_run(item[0][0]).bold = True
 
         # Copy
-        row_one[9].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_one[9].merge(row_one[15])
-        row_one[9].paragraphs[0].add_run(item[0][0]).bold = True
+        # row_one[9].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_one[9].merge(row_one[15])
+        # row_one[9].paragraphs[0].add_run(item[0][0]).bold = True
 
         #Distributor Name, Customer Name, Order Number
         row_two = table.add_row().cells
@@ -603,33 +603,33 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_two[3].paragraphs[0].add_run('\n' + item[4][1])
         row_two[3].paragraphs[0].add_run('\n' + item[5][0])
         #Copy
-        row_two[9].merge(row_two[10])
-        row_two[9].text = item[1][0]
-        row_two[9].paragraphs[0].add_run('\n' + item[2][0])
-        row_two[11].text = item[1][1]
-        row_two[11].paragraphs[0].add_run('\n' + item[2][1])
-        row_two[11].paragraphs[0].add_run('\n' + item[3][0])
-        row_two[11].paragraphs[0].add_run('\n' + item[4][0])
-        row_two[12].merge(row_two[15])
-        row_two[12].text = item[1][2]
-        row_two[12].paragraphs[0].add_run('\n' + item[2][2])
-        row_two[12].paragraphs[0].add_run('\n' + item[3][1])
-        row_two[12].paragraphs[0].add_run('\n' + item[4][1])
-        row_two[0].paragraphs[0].add_run('\n' + item[5][0])
+        # row_two[9].merge(row_two[10])
+        # row_two[9].text = item[1][0]
+        # row_two[9].paragraphs[0].add_run('\n' + item[2][0])
+        # row_two[11].text = item[1][1]
+        # row_two[11].paragraphs[0].add_run('\n' + item[2][1])
+        # row_two[11].paragraphs[0].add_run('\n' + item[3][0])
+        # row_two[11].paragraphs[0].add_run('\n' + item[4][0])
+        # row_two[12].merge(row_two[15])
+        # row_two[12].text = item[1][2]
+        # row_two[12].paragraphs[0].add_run('\n' + item[2][2])
+        # row_two[12].paragraphs[0].add_run('\n' + item[3][1])
+        # row_two[12].paragraphs[0].add_run('\n' + item[4][1])
+        # row_two[12].paragraphs[0].add_run('\n' + item[5][0])
         #Driver Message
         row_seven = table.add_row().cells
         row_seven[0].merge(row_seven[6])
         row_seven[0].text = item[6][0]
         #Copy
-        row_seven[9].merge(row_seven[15])
-        row_seven[9].text = item[6][0]
+        # row_seven[9].merge(row_seven[15])
+        # row_seven[9].text = item[6][0]
         # Product Detail Title
         row_nine = table.add_row().cells
         row_nine[0].merge(row_nine[6])
         row_table1 = row_nine[0].add_table(rows=0, cols=6)
         row_table1.style = 'TableGrid'
-        row_table1.columns[0].width = Inches(0.44)
-        row_table1.columns[1].width = Inches(2.35)
+        row_table1.columns[0].width = Inches(0.45)
+        row_table1.columns[1].width = Inches(2.45)
         row_table1.columns[2].width = Inches(0.50)
         row_table1.columns[3].width = Inches(0.55)
         row_table1.columns[4].width = Inches(0.65)
@@ -644,24 +644,24 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_table_cells1[4].paragraphs[0].add_run('Price').bold = True
         row_table_cells1[5].paragraphs[0].add_run('Amount').bold = True
         #Copy
-        row_nine[9].merge(row_nine[15])
-        row_table2 = row_nine[9].add_table(rows=0, cols=6)
-        row_table2.style = 'TableGrid'
-        row_table2.columns[0].width = Inches(0.44)
-        row_table2.columns[1].width = Inches(2.35)
-        row_table2.columns[2].width = Inches(0.50)
-        row_table2.columns[3].width = Inches(0.55)
-        row_table2.columns[4].width = Inches(0.65)
-        row_table2.columns[5].width = Inches(0.75)
-        row_table_cells2 = row_table2.add_row().cells
-        row_table_cells2[0].paragraphs[0].add_run('Code').bold = True
-        row_table_cells2[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[1].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[1].paragraphs[0].add_run('Description').bold = True
-        row_table_cells2[2].paragraphs[0].add_run('UOM').bold = True
-        row_table_cells2[3].paragraphs[0].add_run('QTY').bold = True
-        row_table_cells2[4].paragraphs[0].add_run('Price').bold = True
-        row_table_cells2[5].paragraphs[0].add_run('Amount').bold = True
+        # row_nine[9].merge(row_nine[15])
+        # row_table2 = row_nine[9].add_table(rows=0, cols=6)
+        # row_table2.style = 'TableGrid'
+        # row_table2.columns[0].width = Inches(0.45)
+        # row_table2.columns[1].width = Inches(2.0)
+        # row_table2.columns[2].width = Inches(0.50)
+        # row_table2.columns[3].width = Inches(0.55)
+        # row_table2.columns[4].width = Inches(0.65)
+        # row_table2.columns[5].width = Inches(0.75)
+        # row_table_cells2 = row_table2.add_row().cells
+        # row_table_cells2[0].paragraphs[0].add_run('Code').bold = True
+        # row_table_cells2[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_table_cells2[1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        # row_table_cells2[1].paragraphs[0].add_run('Description').bold = True
+        # row_table_cells2[2].paragraphs[0].add_run('UOM').bold = True
+        # row_table_cells2[3].paragraphs[0].add_run('QTY').bold = True
+        # row_table_cells2[4].paragraphs[0].add_run('Price').bold = True
+        # row_table_cells2[5].paragraphs[0].add_run('Amount').bold = True
 
         for products in item[8]:
             #Product Detail
@@ -673,13 +673,13 @@ def writedocxwithrealxls(file_path, filename, orders):
             row_product1[4].text = str(products[4]).replace('.0','')
             row_product1[5].text = str(products[5]).replace('.0','')
             #Copy
-            row_product2 = row_table2.add_row().cells
-            row_product2[0].text = str(products[0]).replace('.0','')
-            row_product2[1].text = str(products[1])
-            row_product2[2].text = str(products[2])
-            row_product2[3].text = str(products[3]).replace('.0','')
-            row_product2[4].text = str(products[4]).replace('.0','')
-            row_product2[5].text = str(products[5]).replace('.0','')
+            # row_product2 = row_table2.add_row().cells
+            # row_product2[0].text = str(products[0]).replace('.0','')
+            # row_product2[1].text = str(products[1])
+            # row_product2[2].text = str(products[2])
+            # row_product2[3].text = str(products[3]).replace('.0','')
+            # row_product2[4].text = str(products[4]).replace('.0','')
+            # row_product2[5].text = str(products[5]).replace('.0','')
 
         #Total Products
         row_eleven1 = row_table1.add_row().cells
@@ -690,21 +690,21 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_eleven1[4].text = ''
         row_eleven1[5].text = str(item[9][2]).replace('.0','')
         #Copy
-        row_eleven2 = row_table2.add_row().cells
-        row_eleven2[0].text = ''
-        row_eleven2[1].text = item[9][0]
-        row_eleven2[2].text = ''
-        row_eleven2[3].text = str(item[9][1]).replace('.0','')
-        row_eleven2[4].text = ''
-        row_eleven2[5].text = str(item[9][2]).replace('.0','')
+        # row_eleven2 = row_table2.add_row().cells
+        # row_eleven2[0].text = ''
+        # row_eleven2[1].text = item[9][0]
+        # row_eleven2[2].text = ''
+        # row_eleven2[3].text = str(item[9][1]).replace('.0','')
+        # row_eleven2[4].text = ''
+        # row_eleven2[5].text = str(item[9][2]).replace('.0','')
 
         #Tax Informaiton
         row_twelve = table.add_row().cells
         row_twelve[0].merge(row_twelve[6])
         row_twelve[0].text = item[10][0]
         #Copy
-        row_twelve[9].merge(row_twelve[15])
-        row_twelve[9].text = item[10][0]
+        # row_twelve[9].merge(row_twelve[15])
+        # row_twelve[9].text = item[10][0]
 
         row_thirteen = table.add_row().cells
         row_fourteen = table.add_row().cells
@@ -716,14 +716,15 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_sixteen[4].merge(row_sixteen[6])
         row_sixteen[4].text = item[11][1]
         #Copy
-        row_sixteen[9].merge(row_sixteen[11])
-        row_sixteen[9].text = item[11][0]
-        row_sixteen[13].merge(row_sixteen[15])
-        row_sixteen[13].text = item[11][1]
+        # row_sixteen[9].merge(row_sixteen[11])
+        # row_sixteen[9].text = item[11][0]
+        # row_sixteen[13].merge(row_sixteen[15])
+        # row_sixteen[13].text = item[11][1]
 
         document.add_page_break()
 
     document.save('%s%s.docx' % (file_path, filename))
+
 
 def main():
     app = QApplication(sys.argv)
