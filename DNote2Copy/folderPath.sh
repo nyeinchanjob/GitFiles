@@ -1,1 +1,1 @@
-/media/nyeinchan/601C16171C15E8B4/Development/Git/DNote2Copy/
+D:\Development\DNote2Copy\

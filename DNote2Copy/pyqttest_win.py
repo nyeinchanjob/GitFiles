@@ -73,18 +73,20 @@ class window(QWidget):
     def getsourcefile(self):
         filename = QString()
         filename = QFileDialog.getOpenFileName(self, 'Source file', '', 'Excel 97-2003 file (*.xls)')
-        self.textfilepath.setText(filename.replace('/','\\\\'))
+        self.textfilepath.setText(filename.replace('/','\\'))
         #self.textfilepath.setText(filename)
 
     def getoutfolder(self):
         outputfoldername = QString()
         outputfoldername = QFileDialog.getExistingDirectory(self, 'Output folder', '', QFileDialog.ShowDirsOnly)
-        self.textfolderpath.setText(outputfoldername.replace('\\', '\\\\') + '\\\\')
+        #self.textfolderpath.setText(outputfoldername.replace('\\', '\\\\') + '\\\\')
+        self.textfolderpath.setText(outputfoldername + '\\')
         #self.textfolderpath.setText(outputfoldername + '/')
         #self.textfolderpath.setText(outputfoldername + '\\')
         file = open('folderPath.sh', 'w')
         #file.write(outputfoldername + '/')
-        file.write(outputfoldername.replace('\\', '\\\\') + '\\\\')
+        #file.write(outputfoldername.replace('\\', '\\\\') + '\\\\')
+        file.write(outputfoldername + '\\')
         file.close()
 
 
@@ -171,9 +173,10 @@ def createNewOutputFile(self):
     #self.textfolderpath.setText(outputfoldername + '\\')
     file = open('folderPath.sh', 'w')
     #file.write(outputfoldername + '/')
-    file.write(outputfoldername.replace('\\', '\\\\') + '\\\\')
+    #file.write(outputfoldername.replace('\\', '\\\\') + '\\\\')
+    file.write(outputfoldername + '\\')
     file.close()
-    return outputfoldername + '\\\\'
+    return outputfoldername + '\\'
     #return outputfoldername + '/'
 
 def copyFile(self):
@@ -190,7 +193,7 @@ def copyFile(self):
                         )
                     )
             )
-        return os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.toPlainText())))
+        return str(self.textfolderpath.toPlainText()) + '%s.xls' %(str(self.textFileName.toPlainText()))
     except shutil.Error as e:
         print('Error: %s' % e)
 
@@ -346,26 +349,26 @@ def writedocx(file_path, filename, orders):
         section.page_width = Mm(297) # for A4 Paper
         section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.1)
-        section.right_margin = Inches(0.1)
-        section.top_margin = Inches(0.1)
-        section.bottom_margin = Inches(0.1)
+        section.left_margin = Inches(0.5)
+        section.right_margin = Inches(0.5)
+        section.top_margin = Inches(0.5)
+        section.bottom_margin = Inches(0.5)
 
     for item in orders:
         print item
         table = document.add_table(rows=0, cols=16)
-        table.columns[0].width = Inches(0.44)
-        table.columns[1].width = Inches(0.75)
-        table.columns[2].width = Inches(1.75)
+        table.columns[0].width = Inches(0.45)
+        table.columns[1].width = Inches(1.25)
+        table.columns[2].width = Inches(1.65)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
         table.columns[6].width = Inches(0.75)
-        table.columns[7].width = Inches(0.1)
-        table.columns[8].width = Inches(0.1)
-        table.columns[9].width = Inches(0.44)
-        table.columns[10].width = Inches(0.75)
-        table.columns[11].width = Inches(1.75)
+        table.columns[7].width = Inches(0.05)
+        table.columns[8].width = Inches(0.05)
+        table.columns[9].width = Inches(0.45)
+        table.columns[10].width = Inches(1.25)
+        table.columns[11].width = Inches(1.65)
         table.columns[12].width = Inches(0.50)
         table.columns[13].width = Inches(0.55)
         table.columns[14].width = Inches(0.65)
@@ -433,7 +436,7 @@ def writedocx(file_path, filename, orders):
         row_nine[0].merge(row_nine[6])
         row_table1 = row_nine[0].add_table(rows=0, cols=6)
         row_table1.style = 'TableGrid'
-        row_table1.columns[0].width = Inches(0.44)
+        row_table1.columns[0].width = Inches(0.45)
         row_table1.columns[1].width = Inches(2.0)
         row_table1.columns[2].width = Inches(0.50)
         row_table1.columns[3].width = Inches(0.55)
@@ -458,7 +461,7 @@ def writedocx(file_path, filename, orders):
         row_nine[9].merge(row_nine[15])
         row_table2 = row_nine[9].add_table(rows=0, cols=6)
         row_table2.style = 'TableGrid'
-        row_table2.columns[0].width = Inches(0.44)
+        row_table2.columns[0].width = Inches(0.45)
         row_table2.columns[1].width = Inches(2.0)
         row_table2.columns[2].width = Inches(0.50)
         row_table2.columns[3].width = Inches(0.55)
@@ -562,26 +565,26 @@ def writedocxwithrealxls(file_path, filename, orders):
         section.page_width = Mm(297) # for A4 Paper
         section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.1)
-        section.right_margin = Inches(0.1)
-        section.top_margin = Inches(0.1)
-        section.bottom_margin = Inches(0.1)
+        section.left_margin = Inches(0.5)
+        section.right_margin = Inches(0.5)
+        section.top_margin = Inches(0.5)
+        section.bottom_margin = Inches(0.5)
 
 
     for item in orders:
         table = document.add_table(rows=0, cols=16)
-        table.columns[0].width = Inches(0.44)
-        table.columns[1].width = Inches(0.75)
-        table.columns[2].width = Inches(1.75)
+        table.columns[0].width = Inches(0.45)
+        table.columns[1].width = Inches(1.25)
+        table.columns[2].width = Inches(1.65)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
         table.columns[6].width = Inches(0.75)
-        table.columns[7].width = Inches(0.1)
-        table.columns[8].width = Inches(0.1)
-        table.columns[9].width = Inches(0.44)
-        table.columns[10].width = Inches(0.75)
-        table.columns[11].width = Inches(1.75)
+        table.columns[7].width = Inches(0.05)
+        table.columns[8].width = Inches(0.05)
+        table.columns[9].width = Inches(0.45)
+        table.columns[10].width = Inches(1.25)
+        table.columns[11].width = Inches(1.65)
         table.columns[12].width = Inches(0.50)
         table.columns[13].width = Inches(0.55)
         table.columns[14].width = Inches(0.65)
@@ -640,7 +643,7 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_nine[0].merge(row_nine[6])
         row_table1 = row_nine[0].add_table(rows=0, cols=6)
         row_table1.style = 'TableGrid'
-        row_table1.columns[0].width = Inches(0.44)
+        row_table1.columns[0].width = Inches(0.45)
         row_table1.columns[1].width = Inches(2.0)
         row_table1.columns[2].width = Inches(0.50)
         row_table1.columns[3].width = Inches(0.55)
@@ -659,7 +662,7 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_nine[9].merge(row_nine[15])
         row_table2 = row_nine[9].add_table(rows=0, cols=6)
         row_table2.style = 'TableGrid'
-        row_table2.columns[0].width = Inches(0.44)
+        row_table2.columns[0].width = Inches(0.45)
         row_table2.columns[1].width = Inches(2.0)
         row_table2.columns[2].width = Inches(0.50)
         row_table2.columns[3].width = Inches(0.55)

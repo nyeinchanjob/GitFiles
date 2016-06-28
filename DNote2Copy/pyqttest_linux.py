@@ -78,10 +78,15 @@ class window(QWidget):
         outputfoldername = QFileDialog.getExistingDirectory(self, 'Output folder', '', QFileDialog.ShowDirsOnly)
         #self.textfolderpath.setText(outputfoldername + '\\')
         self.textfolderpath.setText(outputfoldername + '/')
+        file = open('folderPath.sh', 'w')
+        #file.write(outputfoldername + '/')
+        file.write(outputfoldername + '/')
+        file.close()
 
     def reset(self):
         self.textfilepath.setText('')
-        self.textfolderpath.setText('')
+        #self.textfolderpath.setText('')
+        self.textFileName.setText('')
 
     def convert(self):
         try:
@@ -339,7 +344,7 @@ def writedocx(file_path, filename, orders):
         table = document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.44)
         table.columns[1].width = Inches(0.75)
-        table.columns[2].width = Inches(1.75)
+        table.columns[2].width = Inches(2)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
@@ -348,7 +353,7 @@ def writedocx(file_path, filename, orders):
         table.columns[8].width = Inches(0.1)
         table.columns[9].width = Inches(0.44)
         table.columns[10].width = Inches(0.75)
-        table.columns[11].width = Inches(1.75)
+        table.columns[11].width = Inches(2)
         table.columns[12].width = Inches(0.50)
         table.columns[13].width = Inches(0.55)
         table.columns[14].width = Inches(0.65)
@@ -417,7 +422,7 @@ def writedocx(file_path, filename, orders):
         row_table1 = row_nine[0].add_table(rows=0, cols=6)
         row_table1.style = 'TableGrid'
         row_table1.columns[0].width = Inches(0.44)
-        row_table1.columns[1].width = Inches(2.0)
+        row_table1.columns[1].width = Inches(2.35)
         row_table1.columns[2].width = Inches(0.50)
         row_table1.columns[3].width = Inches(0.55)
         row_table1.columns[4].width = Inches(0.65)
@@ -442,7 +447,7 @@ def writedocx(file_path, filename, orders):
         row_table2 = row_nine[9].add_table(rows=0, cols=6)
         row_table2.style = 'TableGrid'
         row_table2.columns[0].width = Inches(0.44)
-        row_table2.columns[1].width = Inches(2.0)
+        row_table2.columns[1].width = Inches(2.35)
         row_table2.columns[2].width = Inches(0.50)
         row_table2.columns[3].width = Inches(0.55)
         row_table2.columns[4].width = Inches(0.65)
@@ -555,7 +560,7 @@ def writedocxwithrealxls(file_path, filename, orders):
         table = document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.44)
         table.columns[1].width = Inches(0.75)
-        table.columns[2].width = Inches(1.75)
+        table.columns[2].width = Inches(2)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
@@ -564,7 +569,7 @@ def writedocxwithrealxls(file_path, filename, orders):
         table.columns[8].width = Inches(0.1)
         table.columns[9].width = Inches(0.44)
         table.columns[10].width = Inches(0.75)
-        table.columns[11].width = Inches(1.75)
+        table.columns[11].width = Inches(2)
         table.columns[12].width = Inches(0.50)
         table.columns[13].width = Inches(0.55)
         table.columns[14].width = Inches(0.65)
@@ -624,7 +629,7 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_table1 = row_nine[0].add_table(rows=0, cols=6)
         row_table1.style = 'TableGrid'
         row_table1.columns[0].width = Inches(0.44)
-        row_table1.columns[1].width = Inches(2.0)
+        row_table1.columns[1].width = Inches(2.35)
         row_table1.columns[2].width = Inches(0.50)
         row_table1.columns[3].width = Inches(0.55)
         row_table1.columns[4].width = Inches(0.65)
@@ -643,7 +648,7 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_table2 = row_nine[9].add_table(rows=0, cols=6)
         row_table2.style = 'TableGrid'
         row_table2.columns[0].width = Inches(0.44)
-        row_table2.columns[1].width = Inches(2.0)
+        row_table2.columns[1].width = Inches(2.35)
         row_table2.columns[2].width = Inches(0.50)
         row_table2.columns[3].width = Inches(0.55)
         row_table2.columns[4].width = Inches(0.65)
