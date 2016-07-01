@@ -12,60 +12,156 @@ from docx.shared import Mm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from xlrd import open_workbook
 
-
-
 from lxml import etree
 from pprint import pprint
 
 import os
 import shutil
 
+from xml.etree import ElementTree
+from xml.etree.ElementTree import Element, SubElement, tostring
+
 sourcefilenames = ''
-outputfoldername = ''
+outputfolder = ''
 docxfilename = ''
+radioState = ''
 
 class window(QWidget):
     def __init__(self, parent = None):
         super(window, self).__init__(parent)
 
         layout = QGridLayout()
+        self.radioString = QString()
+        gblayoutSetting = QGroupBox("Setting")
+        spaceSave = QSpacerItem(0, 0, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        vlayoutSetting = QBoxLayout(QBoxLayout.TopToBottom)
+        vlayoutSetting.addStretch(0)
+        hlayoutOutput = QBoxLayout(QBoxLayout.LeftToRight)
+        hlayoutOutputButton = QBoxLayout(QBoxLayout.LeftToRight)
+        hlayoutPaperRadio = QBoxLayout(QBoxLayout.LeftToRight)
+        rhlayoutSetButton = QBoxLayout(QBoxLayout.RightToLeft)
 
-        self.labelSource = QLabel("Source : ")
-        layout.addWidget(self.labelSource, 0, 0)
-        self.textfilepath = QTextEdit()
-        self.textfilepath.setReadOnly(True)
-        layout.addWidget(self.textfilepath, 0 , 1)
-        self.buttonAdd = QPushButton("Add")
-        self.buttonAdd.clicked.connect(self.getsourcefile)
-        layout.addWidget(self.buttonAdd, 0 , 2)
+        gblayoutConvert = QGroupBox("Convert")
+        vlayoutConvert = QBoxLayout(QBoxLayout.TopToBottom)
+        vlayoutConvert.addStretch(1)
+        hlayoutSource = QBoxLayout(QBoxLayout.LeftToRight)
+        hlayoutSourceButton = QBoxLayout(QBoxLayout.LeftToRight)
+        rhlayoutControlButton = QBoxLayout(QBoxLayout.RightToLeft)
 
+        #Setting
         self.labelOutput = QLabel("Output : ")
-        layout.addWidget(self.labelOutput, 1, 0)
-        self.textfolderpath = QTextEdit()
-        self.textfolderpath.setReadOnly(True)
-        layout.addWidget(self.textfolderpath, 1, 1)
+        hlayoutOutputButton.addWidget(self.labelOutput)
         self.buttonOutput = QPushButton("Add")
         self.buttonOutput.clicked.connect(self.getoutfolder)
-        layout.addWidget(self.buttonOutput, 1, 2)
+        hlayoutOutputButton.addWidget(self.buttonOutput)
+        self.labelOutput1 = QLabel("")
+        hlayoutOutputButton.addWidget(self.labelOutput1)
+        self.labelOutput2 = QLabel("")
+        hlayoutOutputButton.addWidget(self.labelOutput2)
+        vlayoutSetting.addLayout(hlayoutOutputButton)
+        vlayoutSetting.addItem(spaceSave)
+
+        self.textfolderpath = QTextEdit()
+        self.textfolderpath.setReadOnly(True)
+        hlayoutOutput.addWidget(self.textfolderpath)
+        vlayoutSetting.addLayout(hlayoutOutput)
+
+        self.labelPaper = QLabel("Paper : ")
+        vlayoutSetting.addWidget(self.labelPaper)
+
+        self.radioA4Paper = QRadioButton("A4 (2 Copies)")
+        self.radioA4Paper.toggled.connect(lambda:self.btnstate(self.radioA4Paper))
+        self.radioA4Paper.setChecked(True)
+        hlayoutPaperRadio.addWidget(self.radioA4Paper)
+        self.radioA5Paper = QRadioButton("A5 (1 Copy)")
+        self.radioA5Paper.toggled.connect(lambda:self.btnstate(self.radioA5Paper))
+        hlayoutPaperRadio.addWidget(self.radioA5Paper)
+        vlayoutSetting.addLayout(hlayoutPaperRadio)
+
+        rhlayoutSetButton.addItem(spaceSave)
+        self.buttonPaperDefault = QPushButton("Save")
+        self.buttonPaperDefault.clicked.connect(self.writeXMLFile)
+        rhlayoutSetButton.addWidget(self.buttonPaperDefault)
+
+        vlayoutSetting.addLayout(rhlayoutSetButton)
+
+
+        #Convert
+        self.labelSource = QLabel("Source : ")
+        hlayoutSourceButton.addWidget(self.labelSource)
+
+        self.buttonAdd = QPushButton("Add")
+        self.buttonAdd.clicked.connect(self.getsourcefile)
+        hlayoutSourceButton.addWidget(self.buttonAdd)
+        self.labelOutput3 = QLabel("")
+        hlayoutSourceButton.addWidget(self.labelOutput3)
+        self.labelOutput4 = QLabel("")
+        hlayoutSourceButton.addWidget(self.labelOutput4)
+
+        vlayoutConvert.addLayout(hlayoutSourceButton)
+
+        self.textfilepath = QTextEdit()
+        self.textfilepath.setReadOnly(True)
+        hlayoutSource.addWidget(self.textfilepath)
+
+        vlayoutConvert.addLayout(hlayoutSource)
 
         self.labelFileName = QLabel("File Name : ")
-        layout.addWidget(self.labelFileName, 2, 0)
-        self.textFileName = QTextEdit()
-        layout.addWidget(self.textFileName, 2, 1)
+        vlayoutConvert.addWidget(self.labelFileName)
 
-        self.buttonReset = QPushButton("Reset")
-        self.buttonReset.clicked.connect(self.reset)
-        layout.addWidget(self.buttonReset, 3, 0)
+        self.textFileName = QLineEdit()
+        vlayoutConvert.addWidget(self.textFileName)
+
+
         self.buttonConvert = QPushButton("Convert")
         self.buttonConvert.clicked.connect(self.convert)
-        layout.addWidget(self.buttonConvert, 3, 1)
+        rhlayoutControlButton.addWidget(self.buttonConvert)
         self.buttonClose = QPushButton("Close")
         self.buttonClose.clicked.connect(self.close)
-        layout.addWidget(self.buttonClose, 3, 2)
+        rhlayoutControlButton.addWidget(self.buttonClose)
+        self.buttonReset = QPushButton("Reset")
+        self.buttonReset.clicked.connect(self.reset)
+        rhlayoutControlButton.addWidget(self.buttonReset)
+        vlayoutConvert.addLayout(rhlayoutControlButton)
+
+
+        gblayoutSetting.setLayout(vlayoutSetting)
+        gblayoutConvert.setLayout(vlayoutConvert)
+        layout.addWidget(gblayoutSetting, 0 , 0)
+        layout.addWidget(gblayoutConvert, 0, 1)
 
         self.setLayout(layout)
-        self.setWindowTitle("Delivery Notes 2 Copy")
+        self.setWindowTitle("Convertor Delivery Notes")
         self.setGeometry(450, 300, 700,100)
+
+    def writeXMLFile(self):
+        #<delivery_note></delivery_note>
+        deliveryNote = Element('delivery_note')
+        #<delivery_note><config></config></delivery_note>
+        configs = SubElement(deliveryNote, 'config')
+        #<delivery_note><config><output></output></config></delivery_note>
+        output = SubElement(configs, 'output')
+        #<delivery_note><config><output><folder_path name=[value]/></output></config></delivery_note>
+        output.text = str(outputfolder) if len(str(outputfolder).strip())>0 else str(self.textfolderpath.toPlainText())
+        #SubElement(output, 'folder_path', name=self.textfolderPathText()+'\\')
+        #<delivery_note><config><paper><size name=[value]/></paper></config></delivery_note>
+        paper = SubElement(configs, 'paper')
+        paper.text = str(self.radioString) if len(str(self.radioString).strip()) > 0 else 'A4'
+
+
+        file = open('config.xml', 'w')
+        #file.write(outputfoldername + '/')
+        file.write('<?xml version="1.0"?>')
+        file.write(tostring(deliveryNote))
+        file.close()
+
+    def btnstate(self, b):
+        if b.text() == "A4 (2 Copies)":
+            radioState = 'A4' if b.isChecked() == True else 'A5'
+            self.radioString = radioState
+        # if b.text() == "A5 (1 Copy)":
+        #     radioState = 'A5' if b.isChecked() == True else 'A4'
+        #     print radioState
 
     def getsourcefile(self):
         filename = QString()
@@ -78,10 +174,6 @@ class window(QWidget):
         outputfoldername = QFileDialog.getExistingDirectory(self, 'Output folder', '', QFileDialog.ShowDirsOnly)
         #self.textfolderpath.setText(outputfoldername + '\\')
         self.textfolderpath.setText(outputfoldername + '/')
-        file = open('folderPath.sh', 'w')
-        #file.write(outputfoldername + '/')
-        file.write(outputfoldername + '/')
-        file.close()
 
     def reset(self):
         self.textfilepath.setText('')
@@ -97,12 +189,16 @@ class window(QWidget):
 
                     orders = readxls(xlsfile)
                     docxfilename = str(orders[0][2][2]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][4][1]).replace('Sale Rep Name: ','').replace(' ','')
-                    writedocxwithrealxls(str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()), orders)
+                    docxfilename = str(self.textFileName.Text()) if len(str(self.textFileName.Text()).strip()) > 0 else docxfilename
+                    paper = True if radidState == 'A5' else False
+                    writedocxwithrealxls(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 except:
                     orders = parseHTML(xlsfile)
                     docxfilename = str(orders[0][0][3][1]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][0][3][3]).replace('Sale Rep Name: ','').replace(' ','')
                     #dn2c.writedocx(self.textfolderpath.toPlainText(), docxfilename, orders)
-                    writedocx(str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText()), orders)
+                    docxfilename = str(self.textFileName.Text()) if len(str(self.textFileName.Text()).strip()) > 0 else docxfilename
+                    paper = True if radidState == 'A5' else False
+                    writedocx(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
                 msg.setWindowTitle("Successful")
@@ -123,22 +219,60 @@ class window(QWidget):
     def checkOutputFolderPath(self):
         createnewfile = True
         file_path = ''
-        if os.path.isfile('folderPath.sh'):
+        if os.path.isfile('config.xml'):
             createnewfile = False
-            file = open('folderPath.sh', 'r')
-            file_path = file.read()
-            file.close()
-            if len(file_path) == 0:
-                file_path = createNewOutputFile(self)
-                self.textfolderpath.setText(file_path)
+            result = readXMLFile(self)
+            if result[0] == False:
+                    folder_path = createNewOutputFile(self)
+                    self.textfolderpath.setText(folder_path)
+            result = readXMLFile(self)
+            if result[1] == False:
+                PaperDefault(self)
         else:
             #self.textfolderpath.setText(createNewOutputFile() + '\\')
-            file_path = createNewOutputFile(self)
-            self.textfolderpath.setText(file_path)
-        self.textfolderpath.setText(file_path)
+            folder_path = createNewOutputFile(self)
+            self.textfolderpath.setText(folder_path)
 
     def close(self):
         sys.exit()
+
+def readXMLFile(self):
+    xmlConfig = ElementTree.parse('config.xml')
+    delivery_note = xmlConfig.getroot()
+    for output in delivery_note.findall('config/output'):
+        self.textfolderpath.setText(str(output.text).strip())
+    size = ''
+    for paper in delivery_note.findall('config/paper'):
+        size = str(paper.text).strip()
+        radioState = size
+        if paper.text.strip() == 'A4':
+            self.radioA4Paper.setChecked(True)
+        else:
+            self.radioA5Paper.setChecked(True)
+    data = [False, False]
+    data[0] = True if len(str(self.textfolderpath.toPlainText()).strip()) > 0 else False
+    data[1] = True if len(str(size).strip()) > 0 else False
+    return data
+
+def PaperDefault(self):
+    #<delivery_note></delivery_note>
+    deliveryNote = Element('delivery_note')
+    #<delivery_note><config></config></delivery_note>
+    configs = SubElement(deliveryNote, 'config')
+    #<delivery_note><config><output></output></config></delivery_note>
+    output = SubElement(configs, 'output')
+    #<delivery_note><config><output><folder_path name=[value]/></output></config></delivery_note>
+    output.text = str(outputfolder) if len(str(outputfolder).strip())>0 else str(self.textfolderpath.toPlainText())
+    #SubElement(output, 'folder_path', name=self.textfolderPathText()+'\\')
+    #<delivery_note><config><paper><size name=[value]/></paper></config></delivery_note>
+    paper = SubElement(configs, 'paper')
+    paper.text = radioState if len(radioState.strip()) > 0 else 'A4'
+
+    file = open('config.xml', 'w')
+    #file.write(outputfoldername + '/')
+    file.write('<?xml version="1.0"?>')
+    file.write(tostring(deliveryNote))
+    file.close()
 
 def checkFormData(self):
     foundError = False
@@ -151,7 +285,7 @@ def checkFormData(self):
         msg.setText("Source should not be Empty.")
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
-    if len(str(self.textFileName.toPlainText())) == 0:
+    if len(str(self.textFileName.Text())) == 0:
         foundError = True
         self.textFileName.setFocus(True)
         msg.setText("File Name should not be Empty.")
@@ -162,13 +296,12 @@ def checkFormData(self):
 def createNewOutputFile(self):
     outputfoldername = QString()
     outputfoldername = QFileDialog.getExistingDirectory(self, 'Output folder', '', QFileDialog.ShowDirsOnly)
-    #self.textfolderpath.setText(outputfoldername + '\\')
-    file = open('folderPath.sh', 'w')
-    file.write(outputfoldername + '/')
-    #file.write(outputfoldername + '\\')
-    file.close()
-    #return outputfoldername + '\\\\'
-    return outputfoldername + '/'
+    outputfolder = str(outputfoldername) + '/'
+    #outputfolder = outputfoldername + '\\'
+    PaperDefault(self)
+    #PaperDefault(self, outputfoldername + '\\')
+    #return outputfoldername + '\\'
+    return str(outputfoldername) + '/'
 
 def copyFile(self):
     try:
@@ -321,9 +454,7 @@ def parseHTML(path):
                 data.append(xls_doc)
     return data
 
-
-
-def writedocx(file_path, filename, orders):
+def writedocx(file_path, filename, orders, A5Paper):
     document = Document()
     style = document.styles['Normal']
     font = style.font
@@ -331,33 +462,38 @@ def writedocx(file_path, filename, orders):
     font.size = Pt(9)
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
-        section.page_width = Mm(297) # for A4 Paper
-        section.page_height = Mm(210)
+        if A5Paper:
+            section.page_width = Mm(297) # for A4 Paper
+            section.page_height = Mm(210)
+        else:
+            section.page_width = Mm(297) # for A4 Paper
+            section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.1)
-        section.right_margin = Inches(0.1)
-        section.top_margin = Inches(0.1)
-        section.bottom_margin = Inches(0.1)
+        section.left_margin = Inches(0.5)
+        section.right_margin = Inches(0.5)
+        section.top_margin = Inches(0.5)
+        section.bottom_margin = Inches(0.5)
 
     for item in orders:
         print item
         table = document.add_table(rows=0, cols=16)
-        table.columns[0].width = Inches(0.44)
-        table.columns[1].width = Inches(0.75)
-        table.columns[2].width = Inches(2)
+        table.columns[0].width = Inches(0.45)
+        table.columns[1].width = Inches(1.25)
+        table.columns[2].width = Inches(1.65)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
         table.columns[6].width = Inches(0.75)
-        table.columns[7].width = Inches(0.1)
-        table.columns[8].width = Inches(0.1)
-        table.columns[9].width = Inches(0.44)
-        table.columns[10].width = Inches(0.75)
-        table.columns[11].width = Inches(2)
-        table.columns[12].width = Inches(0.50)
-        table.columns[13].width = Inches(0.55)
-        table.columns[14].width = Inches(0.65)
-        table.columns[15].width = Inches(0.75)
+        if A5Paper == False:
+            table.columns[7].width = Inches(0.05)
+            table.columns[8].width = Inches(0.05)
+            table.columns[9].width = Inches(0.45)
+            table.columns[10].width = Inches(1.25)
+            table.columns[11].width = Inches(1.65)
+            table.columns[12].width = Inches(0.50)
+            table.columns[13].width = Inches(0.55)
+            table.columns[14].width = Inches(0.65)
+            table.columns[15].width = Inches(0.75)
 
         #Delivery Notes Title
         row_one = table.add_row().cells
@@ -368,9 +504,10 @@ def writedocx(file_path, filename, orders):
 
         # Copy
         #row_one[9].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_one[9].merge(row_one[15])
-        row_one[9].paragraphs[0].add_run(item[0][0]).bold = True
-        row_one[9].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        if A5Paper == False:
+            row_one[9].merge(row_one[15])
+            row_one[9].paragraphs[0].add_run(item[0][0]).bold = True
+            row_one[9].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
         #Distributor Name, Customer Name, Order Number
         row_two = table.add_row().cells
@@ -392,37 +529,39 @@ def writedocx(file_path, filename, orders):
         row_two[3].paragraphs[0].add_run('\n' + 'Sales Rep Name : ' + item[0][3][3])
         row_two[3].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
         #Copy
-        row_two[9].merge(row_two[10])
-        row_two[9].text = item[0][1][0]
-        row_two[9].paragraphs[0].add_run('\n' + item[0][1][1])
-        row_two[11].text = 'Customer Name : '
-        row_two[11].paragraphs[0].bold = True
-        row_two[11].paragraphs[0].add_run(item[0][2][0])
-        row_two[11].paragraphs[0].add_run('\n' + 'Code :' + item[0][2][1])
-        row_two[11].paragraphs[0].add_run('\n' + 'Address : ' + item[0][2][2])
-        row_two[11].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][2][3])
-        row_two[12].merge(row_two[15])
-        row_two[12].text = 'Order Number : '
-        row_two[12].paragraphs[0].bold = True
-        row_two[12].paragraphs[0].add_run(item[0][3][0])
-        row_two[12].paragraphs[0].add_run('\n' + 'Delivery Date : ' + item[0][3][1])
-        row_two[12].paragraphs[0].add_run('\n' + 'Geo Code : ' + item[0][3][2])
-        row_two[12].paragraphs[0].add_run('\n' + 'Sales Rep Name : ' + item[0][3][3])
-        row_two[0].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
+        if A5Paper == False:
+            row_two[9].merge(row_two[10])
+            row_two[9].text = item[0][1][0]
+            row_two[9].paragraphs[0].add_run('\n' + item[0][1][1])
+            row_two[11].text = 'Customer Name : '
+            row_two[11].paragraphs[0].bold = True
+            row_two[11].paragraphs[0].add_run(item[0][2][0])
+            row_two[11].paragraphs[0].add_run('\n' + 'Code :' + item[0][2][1])
+            row_two[11].paragraphs[0].add_run('\n' + 'Address : ' + item[0][2][2])
+            row_two[11].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][2][3])
+            row_two[12].merge(row_two[15])
+            row_two[12].text = 'Order Number : '
+            row_two[12].paragraphs[0].bold = True
+            row_two[12].paragraphs[0].add_run(item[0][3][0])
+            row_two[12].paragraphs[0].add_run('\n' + 'Delivery Date : ' + item[0][3][1])
+            row_two[12].paragraphs[0].add_run('\n' + 'Geo Code : ' + item[0][3][2])
+            row_two[12].paragraphs[0].add_run('\n' + 'Sales Rep Name : ' + item[0][3][3])
+            row_two[0].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
         #Driver Message
         row_seven = table.add_row().cells
         row_seven[0].merge(row_seven[6])
         row_seven[0].text = 'DRIVER MESSAGE : ' + item[0][4][0]
         #Copy
-        row_seven[9].merge(row_seven[15])
-        row_seven[9].text = 'DRIVER MESSAGE : ' + item[0][4][0]
+        if A5Paper == False:
+            row_seven[9].merge(row_seven[15])
+            row_seven[9].text = 'DRIVER MESSAGE : ' + item[0][4][0]
         # Product Detail Title
         row_nine = table.add_row().cells
         row_nine[0].merge(row_nine[6])
         row_table1 = row_nine[0].add_table(rows=0, cols=6)
         row_table1.style = 'TableGrid'
-        row_table1.columns[0].width = Inches(0.44)
-        row_table1.columns[1].width = Inches(2.35)
+        row_table1.columns[0].width = Inches(0.45)
+        row_table1.columns[1].width = Inches(2.0)
         row_table1.columns[2].width = Inches(0.50)
         row_table1.columns[3].width = Inches(0.55)
         row_table1.columns[4].width = Inches(0.65)
@@ -443,30 +582,31 @@ def writedocx(file_path, filename, orders):
         row_table_cells1[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         row_table_cells1[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         #Copy
-        row_nine[9].merge(row_nine[15])
-        row_table2 = row_nine[9].add_table(rows=0, cols=6)
-        row_table2.style = 'TableGrid'
-        row_table2.columns[0].width = Inches(0.44)
-        row_table2.columns[1].width = Inches(2.35)
-        row_table2.columns[2].width = Inches(0.50)
-        row_table2.columns[3].width = Inches(0.55)
-        row_table2.columns[4].width = Inches(0.65)
-        row_table2.columns[5].width = Inches(0.75)
-        row_table_cells2 = row_table2.add_row().cells
-        row_table_cells2[0].paragraphs[0].add_run('Code').bold = True
-        #row_table_cells2[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        #row_table_cells2[1].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[1].paragraphs[0].add_run('Description').bold = True
-        row_table_cells2[2].paragraphs[0].add_run('UOM').bold = True
-        row_table_cells2[3].paragraphs[0].add_run('QTY').bold = True
-        row_table_cells2[4].paragraphs[0].add_run('Price').bold = True
-        row_table_cells2[5].paragraphs[0].add_run('Amount').bold = True
-        row_table_cells2[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[2].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+        if A5 Paper == False:
+            row_nine[9].merge(row_nine[15])
+            row_table2 = row_nine[9].add_table(rows=0, cols=6)
+            row_table2.style = 'TableGrid'
+            row_table2.columns[0].width = Inches(0.45)
+            row_table2.columns[1].width = Inches(2.0)
+            row_table2.columns[2].width = Inches(0.50)
+            row_table2.columns[3].width = Inches(0.55)
+            row_table2.columns[4].width = Inches(0.65)
+            row_table2.columns[5].width = Inches(0.75)
+            row_table_cells2 = row_table2.add_row().cells
+            row_table_cells2[0].paragraphs[0].add_run('Code').bold = True
+            #row_table_cells2[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            #row_table_cells2[1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            row_table_cells2[1].paragraphs[0].add_run('Description').bold = True
+            row_table_cells2[2].paragraphs[0].add_run('UOM').bold = True
+            row_table_cells2[3].paragraphs[0].add_run('QTY').bold = True
+            row_table_cells2[4].paragraphs[0].add_run('Price').bold = True
+            row_table_cells2[5].paragraphs[0].add_run('Amount').bold = True
+            row_table_cells2[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            row_table_cells2[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            row_table_cells2[2].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            row_table_cells2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            row_table_cells2[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            row_table_cells2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
         for products in item[1]:
             #Product Detail
@@ -481,16 +621,17 @@ def writedocx(file_path, filename, orders):
             row_product1[5].text = str(products[5]).replace('.0','')
             row_product1[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
             #Copy
-            row_product2 = row_table2.add_row().cells
-            row_product2[0].text = str(products[0]).replace('.0','')
-            row_product2[1].text = str(products[1])
-            row_product2[2].text = str(products[2])
-            row_product2[3].text = str(products[3]).replace('.0','')
-            row_product2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
-            row_product2[4].text = str(products[4]).replace('.0','')
-            row_product2[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
-            row_product2[5].text = str(products[5]).replace('.0','')
-            row_product2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+            if A5Paper == False:
+                row_product2 = row_table2.add_row().cells
+                row_product2[0].text = str(products[0]).replace('.0','')
+                row_product2[1].text = str(products[1])
+                row_product2[2].text = str(products[2])
+                row_product2[3].text = str(products[3]).replace('.0','')
+                row_product2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+                row_product2[4].text = str(products[4]).replace('.0','')
+                row_product2[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+                row_product2[5].text = str(products[5]).replace('.0','')
+                row_product2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
         #Total Products
         row_eleven1 = row_table1.add_row().cells
@@ -503,23 +644,25 @@ def writedocx(file_path, filename, orders):
         row_eleven1[5].text = str(item[2][2]).replace('.0','')
         row_eleven1[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
         #Copy
-        row_eleven2 = row_table2.add_row().cells
-        row_eleven2[0].text = ''
-        row_eleven2[1].text = item[2][0]
-        row_eleven2[2].text = ''
-        row_eleven2[3].text = str(item[2][1]).replace('.0','')
-        row_eleven2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
-        row_eleven2[4].text = ''
-        row_eleven2[5].text = str(item[2][2]).replace('.0','')
-        row_eleven2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        if A5Paper == False:
+            row_eleven2 = row_table2.add_row().cells
+            row_eleven2[0].text = ''
+            row_eleven2[1].text = item[2][0]
+            row_eleven2[2].text = ''
+            row_eleven2[3].text = str(item[2][1]).replace('.0','')
+            row_eleven2[3].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+            row_eleven2[4].text = ''
+            row_eleven2[5].text = str(item[2][2]).replace('.0','')
+            row_eleven2[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
         #Tax Informaiton
         row_twelve = table.add_row().cells
         row_twelve[0].merge(row_twelve[6])
         row_twelve[0].text = item[3]
         #Copy
-        row_twelve[9].merge(row_twelve[15])
-        row_twelve[9].text = item[3]
+        if A5Paper == False:
+            row_twelve[9].merge(row_twelve[15])
+            row_twelve[9].text = item[3]
 
         row_thirteen = table.add_row().cells
         row_fourteen = table.add_row().cells
@@ -531,15 +674,16 @@ def writedocx(file_path, filename, orders):
         row_sixteen[4].merge(row_sixteen[6])
         row_sixteen[4].text = item[4][1]
         #Copy
-        row_sixteen[9].merge(row_sixteen[11])
-        row_sixteen[9].text = item[4][0]
-        row_sixteen[13].merge(row_sixteen[15])
-        row_sixteen[13].text = item[4][1]
+        if A5Paper == False:
+            row_sixteen[9].merge(row_sixteen[11])
+            row_sixteen[9].text = item[4][0]
+            row_sixteen[13].merge(row_sixteen[15])
+            row_sixteen[13].text = item[4][1]
         document.add_page_break()
     document.save('%s%s.docx' % (file_path, filename))
 
 
-def writedocxwithrealxls(file_path, filename, orders):
+def writedocxwithrealxls(file_path, filename, orders, A5Paper):
     document = Document()
     style = document.styles['Normal']
     font = style.font
@@ -547,33 +691,37 @@ def writedocxwithrealxls(file_path, filename, orders):
     font.size = Pt(9)
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
-        section.page_width = Mm(297) # for A4 Paper
-        section.page_height = Mm(210)
+        if A5Paper == True:
+            pass
+        else:
+            section.page_width = Mm(297) # for A4 Paper
+            section.page_height = Mm(210)
 
-        section.left_margin = Inches(0.1)
-        section.right_margin = Inches(0.1)
-        section.top_margin = Inches(0.1)
-        section.bottom_margin = Inches(0.1)
+        section.left_margin = Inches(0.5)
+        section.right_margin = Inches(0.5)
+        section.top_margin = Inches(0.5)
+        section.bottom_margin = Inches(0.5)
 
 
     for item in orders:
         table = document.add_table(rows=0, cols=16)
-        table.columns[0].width = Inches(0.44)
-        table.columns[1].width = Inches(0.75)
-        table.columns[2].width = Inches(2)
+        table.columns[0].width = Inches(0.45)
+        table.columns[1].width = Inches(1.25)
+        table.columns[2].width = Inches(1.65)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
         table.columns[6].width = Inches(0.75)
-        table.columns[7].width = Inches(0.1)
-        table.columns[8].width = Inches(0.1)
-        table.columns[9].width = Inches(0.44)
-        table.columns[10].width = Inches(0.75)
-        table.columns[11].width = Inches(2)
-        table.columns[12].width = Inches(0.50)
-        table.columns[13].width = Inches(0.55)
-        table.columns[14].width = Inches(0.65)
-        table.columns[15].width = Inches(0.75)
+        if A5Paper == False:
+            table.columns[7].width = Inches(0.05)
+            table.columns[8].width = Inches(0.05)
+            table.columns[9].width = Inches(0.45)
+            table.columns[10].width = Inches(1.25)
+            table.columns[11].width = Inches(1.65)
+            table.columns[12].width = Inches(0.50)
+            table.columns[13].width = Inches(0.55)
+            table.columns[14].width = Inches(0.65)
+            table.columns[15].width = Inches(0.75)
 
 
         #Delivery Notes Title
@@ -583,9 +731,10 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_one[0].paragraphs[0].add_run(item[0][0]).bold = True
 
         # Copy
-        row_one[9].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_one[9].merge(row_one[15])
-        row_one[9].paragraphs[0].add_run(item[0][0]).bold = True
+        if A5Paper == False:
+            row_one[9].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            row_one[9].merge(row_one[15])
+            row_one[9].paragraphs[0].add_run(item[0][0]).bold = True
 
         #Distributor Name, Customer Name, Order Number
         row_two = table.add_row().cells
@@ -603,33 +752,35 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_two[3].paragraphs[0].add_run('\n' + item[4][1])
         row_two[3].paragraphs[0].add_run('\n' + item[5][0])
         #Copy
-        row_two[9].merge(row_two[10])
-        row_two[9].text = item[1][0]
-        row_two[9].paragraphs[0].add_run('\n' + item[2][0])
-        row_two[11].text = item[1][1]
-        row_two[11].paragraphs[0].add_run('\n' + item[2][1])
-        row_two[11].paragraphs[0].add_run('\n' + item[3][0])
-        row_two[11].paragraphs[0].add_run('\n' + item[4][0])
-        row_two[12].merge(row_two[15])
-        row_two[12].text = item[1][2]
-        row_two[12].paragraphs[0].add_run('\n' + item[2][2])
-        row_two[12].paragraphs[0].add_run('\n' + item[3][1])
-        row_two[12].paragraphs[0].add_run('\n' + item[4][1])
-        row_two[0].paragraphs[0].add_run('\n' + item[5][0])
+        if A5Paper == False:
+            row_two[9].merge(row_two[10])
+            row_two[9].text = item[1][0]
+            row_two[9].paragraphs[0].add_run('\n' + item[2][0])
+            row_two[11].text = item[1][1]
+            row_two[11].paragraphs[0].add_run('\n' + item[2][1])
+            row_two[11].paragraphs[0].add_run('\n' + item[3][0])
+            row_two[11].paragraphs[0].add_run('\n' + item[4][0])
+            row_two[12].merge(row_two[15])
+            row_two[12].text = item[1][2]
+            row_two[12].paragraphs[0].add_run('\n' + item[2][2])
+            row_two[12].paragraphs[0].add_run('\n' + item[3][1])
+            row_two[12].paragraphs[0].add_run('\n' + item[4][1])
+            row_two[0].paragraphs[0].add_run('\n' + item[5][0])
         #Driver Message
         row_seven = table.add_row().cells
         row_seven[0].merge(row_seven[6])
         row_seven[0].text = item[6][0]
         #Copy
-        row_seven[9].merge(row_seven[15])
-        row_seven[9].text = item[6][0]
+        if A5Paper == False:
+            row_seven[9].merge(row_seven[15])
+            row_seven[9].text = item[6][0]
         # Product Detail Title
         row_nine = table.add_row().cells
         row_nine[0].merge(row_nine[6])
         row_table1 = row_nine[0].add_table(rows=0, cols=6)
         row_table1.style = 'TableGrid'
-        row_table1.columns[0].width = Inches(0.44)
-        row_table1.columns[1].width = Inches(2.35)
+        row_table1.columns[0].width = Inches(0.45)
+        row_table1.columns[1].width = Inches(2.0)
         row_table1.columns[2].width = Inches(0.50)
         row_table1.columns[3].width = Inches(0.55)
         row_table1.columns[4].width = Inches(0.65)
@@ -644,24 +795,25 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_table_cells1[4].paragraphs[0].add_run('Price').bold = True
         row_table_cells1[5].paragraphs[0].add_run('Amount').bold = True
         #Copy
-        row_nine[9].merge(row_nine[15])
-        row_table2 = row_nine[9].add_table(rows=0, cols=6)
-        row_table2.style = 'TableGrid'
-        row_table2.columns[0].width = Inches(0.44)
-        row_table2.columns[1].width = Inches(2.35)
-        row_table2.columns[2].width = Inches(0.50)
-        row_table2.columns[3].width = Inches(0.55)
-        row_table2.columns[4].width = Inches(0.65)
-        row_table2.columns[5].width = Inches(0.75)
-        row_table_cells2 = row_table2.add_row().cells
-        row_table_cells2[0].paragraphs[0].add_run('Code').bold = True
-        row_table_cells2[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[1].alignment = WD_ALIGN_PARAGRAPH.CENTER
-        row_table_cells2[1].paragraphs[0].add_run('Description').bold = True
-        row_table_cells2[2].paragraphs[0].add_run('UOM').bold = True
-        row_table_cells2[3].paragraphs[0].add_run('QTY').bold = True
-        row_table_cells2[4].paragraphs[0].add_run('Price').bold = True
-        row_table_cells2[5].paragraphs[0].add_run('Amount').bold = True
+        if A5Paper == False:
+            row_nine[9].merge(row_nine[15])
+            row_table2 = row_nine[9].add_table(rows=0, cols=6)
+            row_table2.style = 'TableGrid'
+            row_table2.columns[0].width = Inches(0.45)
+            row_table2.columns[1].width = Inches(2.0)
+            row_table2.columns[2].width = Inches(0.50)
+            row_table2.columns[3].width = Inches(0.55)
+            row_table2.columns[4].width = Inches(0.65)
+            row_table2.columns[5].width = Inches(0.75)
+            row_table_cells2 = row_table2.add_row().cells
+            row_table_cells2[0].paragraphs[0].add_run('Code').bold = True
+            row_table_cells2[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            row_table_cells2[1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+            row_table_cells2[1].paragraphs[0].add_run('Description').bold = True
+            row_table_cells2[2].paragraphs[0].add_run('UOM').bold = True
+            row_table_cells2[3].paragraphs[0].add_run('QTY').bold = True
+            row_table_cells2[4].paragraphs[0].add_run('Price').bold = True
+            row_table_cells2[5].paragraphs[0].add_run('Amount').bold = True
 
         for products in item[8]:
             #Product Detail
@@ -673,13 +825,14 @@ def writedocxwithrealxls(file_path, filename, orders):
             row_product1[4].text = str(products[4]).replace('.0','')
             row_product1[5].text = str(products[5]).replace('.0','')
             #Copy
-            row_product2 = row_table2.add_row().cells
-            row_product2[0].text = str(products[0]).replace('.0','')
-            row_product2[1].text = str(products[1])
-            row_product2[2].text = str(products[2])
-            row_product2[3].text = str(products[3]).replace('.0','')
-            row_product2[4].text = str(products[4]).replace('.0','')
-            row_product2[5].text = str(products[5]).replace('.0','')
+            if A5Paper == False:
+                row_product2 = row_table2.add_row().cells
+                row_product2[0].text = str(products[0]).replace('.0','')
+                row_product2[1].text = str(products[1])
+                row_product2[2].text = str(products[2])
+                row_product2[3].text = str(products[3]).replace('.0','')
+                row_product2[4].text = str(products[4]).replace('.0','')
+                row_product2[5].text = str(products[5]).replace('.0','')
 
         #Total Products
         row_eleven1 = row_table1.add_row().cells
@@ -690,21 +843,23 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_eleven1[4].text = ''
         row_eleven1[5].text = str(item[9][2]).replace('.0','')
         #Copy
-        row_eleven2 = row_table2.add_row().cells
-        row_eleven2[0].text = ''
-        row_eleven2[1].text = item[9][0]
-        row_eleven2[2].text = ''
-        row_eleven2[3].text = str(item[9][1]).replace('.0','')
-        row_eleven2[4].text = ''
-        row_eleven2[5].text = str(item[9][2]).replace('.0','')
+        if A5Paper == False:
+            row_eleven2 = row_table2.add_row().cells
+            row_eleven2[0].text = ''
+            row_eleven2[1].text = item[9][0]
+            row_eleven2[2].text = ''
+            row_eleven2[3].text = str(item[9][1]).replace('.0','')
+            row_eleven2[4].text = ''
+            row_eleven2[5].text = str(item[9][2]).replace('.0','')
 
         #Tax Informaiton
         row_twelve = table.add_row().cells
         row_twelve[0].merge(row_twelve[6])
         row_twelve[0].text = item[10][0]
         #Copy
-        row_twelve[9].merge(row_twelve[15])
-        row_twelve[9].text = item[10][0]
+        if A5Paper == False:
+            row_twelve[9].merge(row_twelve[15])
+            row_twelve[9].text = item[10][0]
 
         row_thirteen = table.add_row().cells
         row_fourteen = table.add_row().cells
@@ -716,10 +871,11 @@ def writedocxwithrealxls(file_path, filename, orders):
         row_sixteen[4].merge(row_sixteen[6])
         row_sixteen[4].text = item[11][1]
         #Copy
-        row_sixteen[9].merge(row_sixteen[11])
-        row_sixteen[9].text = item[11][0]
-        row_sixteen[13].merge(row_sixteen[15])
-        row_sixteen[13].text = item[11][1]
+        if A5Paper == False:
+            row_sixteen[9].merge(row_sixteen[11])
+            row_sixteen[9].text = item[11][0]
+            row_sixteen[13].merge(row_sixteen[15])
+            row_sixteen[13].text = item[11][1]
 
         document.add_page_break()
 
