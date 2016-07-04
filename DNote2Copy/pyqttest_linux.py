@@ -189,20 +189,23 @@ class window(QWidget):
 
                     orders = readxls(xlsfile)
                     docxfilename = str(orders[0][2][2]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][4][1]).replace('Sale Rep Name: ','').replace(' ','')
-                    docxfilename = str(self.textFileName.Text()) if len(str(self.textFileName.Text()).strip()) > 0 else docxfilename
-                    paper = True if radidState == 'A5' else False
+                    docxfilename = str(self.textFileName.text()) if len(str(self.textFileName.text()).strip()) > 0 else docxfilename
+                    #paper = True if radioState == 'A5' else False
+                    paper = True if self.radioA5Paper.isChecked() else False
                     writedocxwithrealxls(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 except:
                     orders = parseHTML(xlsfile)
                     docxfilename = str(orders[0][0][3][1]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][0][3][3]).replace('Sale Rep Name: ','').replace(' ','')
                     #dn2c.writedocx(self.textfolderpath.toPlainText(), docxfilename, orders)
-                    docxfilename = str(self.textFileName.Text()) if len(str(self.textFileName.Text()).strip()) > 0 else docxfilename
-                    paper = True if radidState == 'A5' else False
+                    docxfilename = str(self.textFileName.text()) if len(str(self.textFileName.text()).strip()) > 0 else docxfilename
+
+                    paper = True if self.radioA5Paper.isChecked() else False
+                    print 'paper %s' %(str(paper))
                     writedocx(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
                 msg.setWindowTitle("Successful")
-                msg.setText("Convert Successfully! Check %s.docx file in selected folder (%s)" % (str(self.textFileName.toPlainText()), self.textfolderpath.toPlainText()))
+                msg.setText("Convert Successfully! Check %s.docx file in selected folder (%s)" % (str(self.textFileName.text()), self.textfolderpath.toPlainText()))
                 msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
                 msg.exec_()
         except:
@@ -244,7 +247,6 @@ def readXMLFile(self):
     size = ''
     for paper in delivery_note.findall('config/paper'):
         size = str(paper.text).strip()
-        radioState = size
         if paper.text.strip() == 'A4':
             self.radioA4Paper.setChecked(True)
         else:
@@ -285,7 +287,7 @@ def checkFormData(self):
         msg.setText("Source should not be Empty.")
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
-    if len(str(self.textFileName.Text())) == 0:
+    if len(str(self.textFileName.text())) == 0:
         foundError = True
         self.textFileName.setFocus(True)
         msg.setText("File Name should not be Empty.")
@@ -313,11 +315,11 @@ def copyFile(self):
                 self.textfolderpath.toPlainText()
                 )+'%s.xls' % (
                     str(
-                        self.textFileName.toPlainText()
+                        self.textFileName.text()
                         )
                     )
             )
-        return os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.toPlainText())))
+        return os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.text())))
     except shutil.Error as e:
         print('Error: %s' % e)
 
@@ -463,7 +465,7 @@ def writedocx(file_path, filename, orders, A5Paper):
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
         if A5Paper:
-            section.page_width = Mm(297) # for A4 Paper
+            section.page_width = Mm(148) # for A5 Paper
             section.page_height = Mm(210)
         else:
             section.page_width = Mm(297) # for A4 Paper
@@ -474,22 +476,23 @@ def writedocx(file_path, filename, orders, A5Paper):
         section.top_margin = Inches(0.5)
         section.bottom_margin = Inches(0.5)
 
-    for item in orders:
-        print item
-        table = document.add_table(rows=0, cols=16)
+    for i,item in enumerate(orders):
+        print 'order : ', i
+        table = document.add_table(rows=0, cols=7) if A5Paper else document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
-        table.columns[2].width = Inches(1.65)
+        table.columns[2].width = Inches(1.60)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
         table.columns[6].width = Inches(0.75)
+
         if A5Paper == False:
             table.columns[7].width = Inches(0.05)
             table.columns[8].width = Inches(0.05)
             table.columns[9].width = Inches(0.45)
             table.columns[10].width = Inches(1.25)
-            table.columns[11].width = Inches(1.65)
+            table.columns[11].width = Inches(1.60)
             table.columns[12].width = Inches(0.50)
             table.columns[13].width = Inches(0.55)
             table.columns[14].width = Inches(0.65)
@@ -530,6 +533,7 @@ def writedocx(file_path, filename, orders, A5Paper):
         row_two[3].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
         #Copy
         if A5Paper == False:
+            print 'oops copy'
             row_two[9].merge(row_two[10])
             row_two[9].text = item[0][1][0]
             row_two[9].paragraphs[0].add_run('\n' + item[0][1][1])
@@ -546,7 +550,7 @@ def writedocx(file_path, filename, orders, A5Paper):
             row_two[12].paragraphs[0].add_run('\n' + 'Delivery Date : ' + item[0][3][1])
             row_two[12].paragraphs[0].add_run('\n' + 'Geo Code : ' + item[0][3][2])
             row_two[12].paragraphs[0].add_run('\n' + 'Sales Rep Name : ' + item[0][3][3])
-            row_two[0].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
+            row_two[12].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
         #Driver Message
         row_seven = table.add_row().cells
         row_seven[0].merge(row_seven[6])
@@ -582,7 +586,7 @@ def writedocx(file_path, filename, orders, A5Paper):
         row_table_cells1[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         row_table_cells1[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         #Copy
-        if A5 Paper == False:
+        if A5Paper == False:
             row_nine[9].merge(row_nine[15])
             row_table2 = row_nine[9].add_table(rows=0, cols=6)
             row_table2.style = 'TableGrid'
@@ -694,7 +698,7 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
         if A5Paper == True:
             pass
         else:
-            section.page_width = Mm(297) # for A4 Paper
+            section.page_width = Mm(148) # for A4 Paper
             section.page_height = Mm(210)
 
         section.left_margin = Inches(0.5)
@@ -704,20 +708,22 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
 
 
     for item in orders:
+
         table = document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
-        table.columns[2].width = Inches(1.65)
+        table.columns[2].width = Inches(1.60)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
         table.columns[6].width = Inches(0.75)
+        table.columns[7].width = Inches(0.05)
         if A5Paper == False:
-            table.columns[7].width = Inches(0.05)
+
             table.columns[8].width = Inches(0.05)
             table.columns[9].width = Inches(0.45)
             table.columns[10].width = Inches(1.25)
-            table.columns[11].width = Inches(1.65)
+            table.columns[11].width = Inches(1.60)
             table.columns[12].width = Inches(0.50)
             table.columns[13].width = Inches(0.55)
             table.columns[14].width = Inches(0.65)
@@ -729,7 +735,6 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
         row_one[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         row_one[0].merge(row_one[6])
         row_one[0].paragraphs[0].add_run(item[0][0]).bold = True
-
         # Copy
         if A5Paper == False:
             row_one[9].alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -765,7 +770,7 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
             row_two[12].paragraphs[0].add_run('\n' + item[2][2])
             row_two[12].paragraphs[0].add_run('\n' + item[3][1])
             row_two[12].paragraphs[0].add_run('\n' + item[4][1])
-            row_two[0].paragraphs[0].add_run('\n' + item[5][0])
+            row_two[12].paragraphs[0].add_run('\n' + item[5][0])
         #Driver Message
         row_seven = table.add_row().cells
         row_seven[0].merge(row_seven[6])

@@ -190,15 +190,15 @@ class window(QWidget):
                 try:
                     orders = readxls(xlsfile)
                     docxfilename = str(orders[0][2][2]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][4][1]).replace('Sale Rep Name: ','').replace(' ','')
-                    docxfilename = str(self.textFileName.Text()) if len(str(self.textFileName.Text()).strip()) > 0 else docxfilename
-                    paper = True if radidState == 'A5' else False
+                    docxfilename = str(self.textFileName.text()) if len(str(self.textFileName.text()).strip()) > 0 else docxfilename
+                    paper = True if radioState == 'A5' else False
                     writedocxwithrealxls(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 except:
                     orders = parseHTML(xlsfile)
                     docxfilename = str(orders[0][0][3][1]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][0][3][3]).replace('Sale Rep Name: ','').replace(' ','')
                     #dn2c.writedocx(self.textfolderpath.toPlainText(), docxfilename, orders)
-                    docxfilename = str(self.textFileName.Text()) if len(str(self.textFileName.Text()).strip()) > 0 else docxfilename
-                    paper = True if radidState == 'A5' else False
+                    docxfilename = str(self.textFileName.text()) if len(str(self.textFileName.text()).strip()) > 0 else docxfilename
+                    paper = True if radioState == 'A5' else False
                     writedocx(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
@@ -207,7 +207,7 @@ class window(QWidget):
                 msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                 msg.setDefaultButton(QMessageBox.Yes)
                 if (msg.exec_() == QMessageBox.Yes):
-                            openMSWords('%s%s.docx' % (str(self.textfolderpath.toPlainText()), str(self.textFileName.toPlainText())))
+                            openMSWords('%s%s.docx' % (str(self.textfolderpath.toPlainText()), str(self.textFileName.text())))
         except:
             print traceback.format_exc()
             msg = QMessageBox()
@@ -288,7 +288,7 @@ def checkFormData(self):
         msg.setText("Source should not be Empty.")
         msg.setStandardButtons(QMessageBox.Ok)
         msg.exec_()
-    if len(str(self.textFileName.Text())) == 0:
+    if len(str(self.textFileName.text())) == 0:
         foundError = True
         self.textFileName.setFocus(True)
         msg.setText("File Name should not be Empty.")
@@ -316,11 +316,11 @@ def copyFile(self):
                 self.textfolderpath.toPlainText()
                 )+'%s.xls' % (
                     str(
-                        self.textFileName.toPlainText()
+                        self.textFileName.text()
                         )
                     )
             )
-        return os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.toPlainText())))
+        return os.path.join(str(self.textfolderpath.toPlainText()), '%s.xls' % (str(self.textFileName.text())))
     except shutil.Error as e:
         print('Error: %s' % e)
 
@@ -491,7 +491,7 @@ def writedocx(file_path, filename, orders, A5Paper):
         table = document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
-        table.columns[2].width = Inches(1.65)
+        table.columns[2].width = Inches(1.60)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
@@ -594,7 +594,7 @@ def writedocx(file_path, filename, orders, A5Paper):
         row_table_cells1[4].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         row_table_cells1[5].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         #Copy
-        if A5 Paper == False:
+        if A5Paper == False:
             row_nine[9].merge(row_nine[15])
             row_table2 = row_nine[9].add_table(rows=0, cols=6)
             row_table2.style = 'TableGrid'
@@ -719,7 +719,7 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
         table = document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
-        table.columns[2].width = Inches(1.65)
+        table.columns[2].width = Inches(1.60)
         table.columns[3].width = Inches(0.50)
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
