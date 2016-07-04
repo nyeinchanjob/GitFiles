@@ -148,7 +148,7 @@ class window(QWidget):
         paper = SubElement(configs, 'paper')
         paper.text = str(self.radioString) if len(str(self.radioString).strip()) > 0 else 'A4'
 
-
+        #write config.xml
         file = open('config.xml', 'w')
         #file.write(outputfoldername + '/')
         file.write('<?xml version="1.0"?>')
