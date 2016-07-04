@@ -191,14 +191,15 @@ class window(QWidget):
                     orders = readxls(xlsfile)
                     docxfilename = str(orders[0][2][2]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][4][1]).replace('Sale Rep Name: ','').replace(' ','')
                     docxfilename = str(self.textFileName.text()) if len(str(self.textFileName.text()).strip()) > 0 else docxfilename
-                    paper = True if radioState == 'A5' else False
+                    paper = True if self.radioA5Paper.isChecked() else False
                     writedocxwithrealxls(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 except:
                     orders = parseHTML(xlsfile)
                     docxfilename = str(orders[0][0][3][1]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][0][3][3]).replace('Sale Rep Name: ','').replace(' ','')
                     #dn2c.writedocx(self.textfolderpath.toPlainText(), docxfilename, orders)
                     docxfilename = str(self.textFileName.text()) if len(str(self.textFileName.text()).strip()) > 0 else docxfilename
-                    paper = True if radioState == 'A5' else False
+                    print self.radioString
+                    paper = True if self.radioA5Paper.isChecked() else False
                     writedocx(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
@@ -248,6 +249,7 @@ def readXMLFile(self):
     for paper in delivery_note.findall('config/paper'):
         size = str(paper.text).strip()
         radioState = size
+        self.radioString = size
         if paper.text.strip() == 'A4':
             self.radioA4Paper.setChecked(True)
         else:
@@ -475,7 +477,7 @@ def writedocx(file_path, filename, orders, A5Paper):
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
         if A5Paper:
-            section.page_width = Mm(297) # for A4 Paper
+            section.page_width = Mm(148) # for A4 Paper
             section.page_height = Mm(210)
         else:
             section.page_width = Mm(297) # for A4 Paper
@@ -486,8 +488,7 @@ def writedocx(file_path, filename, orders, A5Paper):
         section.top_margin = Inches(0.5)
         section.bottom_margin = Inches(0.5)
 
-    for item in orders:
-        print item
+    for o, item in enumerate(orders):
         table = document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
@@ -692,6 +693,7 @@ def writedocx(file_path, filename, orders, A5Paper):
             row_sixteen[13].merge(row_sixteen[15])
             row_sixteen[13].text = item[4][1]
         document.add_page_break()
+        print '[Converted] Order : ', str(o + 1)
     document.save('%s%s.docx' % (file_path, filename))
 
 
@@ -704,7 +706,8 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
         if A5Paper == True:
-            pass
+            section.page_width = Mm(148) # for A4 Paper
+            section.page_height = Mm(210)
         else:
             section.page_width = Mm(297) # for A4 Paper
             section.page_height = Mm(210)
@@ -715,7 +718,7 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
         section.bottom_margin = Inches(0.5)
 
 
-    for item in orders:
+    for o, item in enumerate(orders):
         table = document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
@@ -890,7 +893,7 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
             row_sixteen[13].text = item[11][1]
 
         document.add_page_break()
-
+        print '[Converted] Order : ', str(o + 1)
     document.save('%s%s.docx' % (file_path, filename))
 
 def main():

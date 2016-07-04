@@ -247,6 +247,8 @@ def readXMLFile(self):
     size = ''
     for paper in delivery_note.findall('config/paper'):
         size = str(paper.text).strip()
+        radioState = size
+        self.radioString = size
         if paper.text.strip() == 'A4':
             self.radioA4Paper.setChecked(True)
         else:
@@ -476,8 +478,7 @@ def writedocx(file_path, filename, orders, A5Paper):
         section.top_margin = Inches(0.5)
         section.bottom_margin = Inches(0.5)
 
-    for i,item in enumerate(orders):
-        print 'order : ', i
+    for o, item in enumerate(orders):
         table = document.add_table(rows=0, cols=7) if A5Paper else document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
@@ -684,6 +685,7 @@ def writedocx(file_path, filename, orders, A5Paper):
             row_sixteen[13].merge(row_sixteen[15])
             row_sixteen[13].text = item[4][1]
         document.add_page_break()
+        print '[Converted] Order : ', str(o + 1)
     document.save('%s%s.docx' % (file_path, filename))
 
 
@@ -708,7 +710,6 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
 
 
     for item in orders:
-
         table = document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
@@ -883,7 +884,7 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
             row_sixteen[13].text = item[11][1]
 
         document.add_page_break()
-
+        print '[Converted] Order : ', str(o + 1)
     document.save('%s%s.docx' % (file_path, filename))
 
 def main():
