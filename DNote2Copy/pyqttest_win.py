@@ -386,6 +386,12 @@ def getItemDetail(block):
                                     if value:
                                         each_row.append(value)
                                 data.append(each_row)
+    for i, row in enumerate(data):
+        if len(row) == 5:
+            temp = row[4].split('.')
+            row[4] = '0'
+            row.append(temp[0])
+            data[i] = row
     return data
 
 
@@ -479,17 +485,22 @@ def writedocx(file_path, filename, orders, A5Paper):
         if A5Paper:
             section.page_width = Mm(148) # for A4 Paper
             section.page_height = Mm(210)
+            section.left_margin = Inches(0.3)
+            section.right_margin = Inches(0.2)
+            section.top_margin = Inches(0.5)
+            section.bottom_margin = Inches(0.5)
         else:
             section.page_width = Mm(297) # for A4 Paper
             section.page_height = Mm(210)
+            section.left_margin = Inches(0.5)
+            section.right_margin = Inches(0.5)
+            section.top_margin = Inches(0.5)
+            section.bottom_margin = Inches(0.5)
 
-        section.left_margin = Inches(0.5)
-        section.right_margin = Inches(0.5)
-        section.top_margin = Inches(0.5)
-        section.bottom_margin = Inches(0.5)
+
 
     for o, item in enumerate(orders):
-        table = document.add_table(rows=0, cols=16)
+        table = document.add_table(rows=0, cols=7) if A5Paper else document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
         table.columns[2].width = Inches(1.60)
@@ -708,18 +719,23 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
         if A5Paper == True:
             section.page_width = Mm(148) # for A4 Paper
             section.page_height = Mm(210)
+            section.left_margin = Inches(0.3)
+            section.right_margin = Inches(0.2)
+            section.top_margin = Inches(0.5)
+            section.bottom_margin = Inches(0.5)
         else:
             section.page_width = Mm(297) # for A4 Paper
             section.page_height = Mm(210)
+            section.left_margin = Inches(0.5)
+            section.right_margin = Inches(0.5)
+            section.top_margin = Inches(0.5)
+            section.bottom_margin = Inches(0.5)
 
-        section.left_margin = Inches(0.5)
-        section.right_margin = Inches(0.5)
-        section.top_margin = Inches(0.5)
-        section.bottom_margin = Inches(0.5)
+
 
 
     for o, item in enumerate(orders):
-        table = document.add_table(rows=0, cols=16)
+        table = document.add_table(rows=0, cols=7) if A5Paper else document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
         table.columns[1].width = Inches(1.25)
         table.columns[2].width = Inches(1.60)

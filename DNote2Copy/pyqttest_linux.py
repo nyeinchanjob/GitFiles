@@ -198,9 +198,8 @@ class window(QWidget):
                     docxfilename = str(orders[0][0][3][1]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][0][3][3]).replace('Sale Rep Name: ','').replace(' ','')
                     #dn2c.writedocx(self.textfolderpath.toPlainText(), docxfilename, orders)
                     docxfilename = str(self.textFileName.text()) if len(str(self.textFileName.text()).strip()) > 0 else docxfilename
-
+                    print self.radioString
                     paper = True if self.radioA5Paper.isChecked() else False
-                    print 'paper %s' %(str(paper))
                     writedocx(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
@@ -378,6 +377,12 @@ def getItemDetail(block):
                                     if value:
                                         each_row.append(value)
                                 data.append(each_row)
+    for i, row in enumerate(data):
+        if len(row) == 5:
+            temp = row[4].split('.')
+            row[4] = '0'
+            row.append(temp[0])
+            data[i] = row
     return data
 
 
@@ -469,15 +474,17 @@ def writedocx(file_path, filename, orders, A5Paper):
         if A5Paper:
             section.page_width = Mm(148) # for A5 Paper
             section.page_height = Mm(210)
+            section.left_margin = Inches(0.3)
+            section.right_margin = Inches(0.2)
+            section.top_margin = Inches(0.5)
+            section.bottom_margin = Inches(0.5)
         else:
             section.page_width = Mm(297) # for A4 Paper
             section.page_height = Mm(210)
-
-        section.left_margin = Inches(0.5)
-        section.right_margin = Inches(0.5)
-        section.top_margin = Inches(0.5)
-        section.bottom_margin = Inches(0.5)
-
+            section.left_margin = Inches(0.5)
+            section.right_margin = Inches(0.5)
+            section.top_margin = Inches(0.5)
+            section.bottom_margin = Inches(0.5)
     for o, item in enumerate(orders):
         table = document.add_table(rows=0, cols=7) if A5Paper else document.add_table(rows=0, cols=16)
         table.columns[0].width = Inches(0.45)
@@ -493,7 +500,7 @@ def writedocx(file_path, filename, orders, A5Paper):
             table.columns[8].width = Inches(0.05)
             table.columns[9].width = Inches(0.45)
             table.columns[10].width = Inches(1.25)
-            table.columns[11].width = Inches(1.60)
+            table.columns[11].width = Inches(1.65)
             table.columns[12].width = Inches(0.50)
             table.columns[13].width = Inches(0.55)
             table.columns[14].width = Inches(0.65)
@@ -534,7 +541,6 @@ def writedocx(file_path, filename, orders, A5Paper):
         row_two[3].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
         #Copy
         if A5Paper == False:
-            print 'oops copy'
             row_two[9].merge(row_two[10])
             row_two[9].text = item[0][1][0]
             row_two[9].paragraphs[0].add_run('\n' + item[0][1][1])
@@ -551,7 +557,7 @@ def writedocx(file_path, filename, orders, A5Paper):
             row_two[12].paragraphs[0].add_run('\n' + 'Delivery Date : ' + item[0][3][1])
             row_two[12].paragraphs[0].add_run('\n' + 'Geo Code : ' + item[0][3][2])
             row_two[12].paragraphs[0].add_run('\n' + 'Sales Rep Name : ' + item[0][3][3])
-            row_two[12].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
+            row_two[0].paragraphs[0].add_run('\n' + 'Tel : ' + item[0][3][4])
         #Driver Message
         row_seven = table.add_row().cells
         row_seven[0].merge(row_seven[6])
@@ -698,15 +704,19 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
     for section in document.sections:
         section.orientation = 1 # 1 is LANDSCAPE, 0 is POTRAIT
         if A5Paper == True:
-            pass
-        else:
             section.page_width = Mm(148) # for A4 Paper
             section.page_height = Mm(210)
-
-        section.left_margin = Inches(0.5)
-        section.right_margin = Inches(0.5)
-        section.top_margin = Inches(0.5)
-        section.bottom_margin = Inches(0.5)
+            section.left_margin = Inches(0.3)
+            section.right_margin = Inches(0.2)
+            section.top_margin = Inches(0.5)
+            section.bottom_margin = Inches(0.5)
+        else:
+            section.page_width = Mm(297) # for A4 Paper
+            section.page_height = Mm(210)
+            section.left_margin = Inches(0.5)
+            section.right_margin = Inches(0.5)
+            section.top_margin = Inches(0.5)
+            section.bottom_margin = Inches(0.5)
 
 
     for item in orders:
@@ -718,13 +728,13 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
         table.columns[4].width = Inches(0.55)
         table.columns[5].width = Inches(0.65)
         table.columns[6].width = Inches(0.75)
-        table.columns[7].width = Inches(0.05)
-        if A5Paper == False:
 
+        if A5Paper == False:
+            table.columns[7].width = Inches(0.05)
             table.columns[8].width = Inches(0.05)
             table.columns[9].width = Inches(0.45)
             table.columns[10].width = Inches(1.25)
-            table.columns[11].width = Inches(1.60)
+            table.columns[11].width = Inches(1.65)
             table.columns[12].width = Inches(0.50)
             table.columns[13].width = Inches(0.55)
             table.columns[14].width = Inches(0.65)
@@ -771,7 +781,7 @@ def writedocxwithrealxls(file_path, filename, orders, A5Paper):
             row_two[12].paragraphs[0].add_run('\n' + item[2][2])
             row_two[12].paragraphs[0].add_run('\n' + item[3][1])
             row_two[12].paragraphs[0].add_run('\n' + item[4][1])
-            row_two[12].paragraphs[0].add_run('\n' + item[5][0])
+            row_two[0].paragraphs[0].add_run('\n' + item[5][0])
         #Driver Message
         row_seven = table.add_row().cells
         row_seven[0].merge(row_seven[6])
