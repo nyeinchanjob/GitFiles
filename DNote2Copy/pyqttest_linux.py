@@ -195,6 +195,7 @@ class window(QWidget):
                     writedocxwithrealxls(str(self.textfolderpath.toPlainText()), docxfilename, orders, paper)
                 except:
                     orders = parseHTML(xlsfile)
+                    print orders
                     docxfilename = str(orders[0][0][3][1]).replace('Delivery Date: ','').replace('.','') + '_' + str(orders[0][0][3][3]).replace('Sale Rep Name: ','').replace(' ','')
                     #dn2c.writedocx(self.textfolderpath.toPlainText(), docxfilename, orders)
                     docxfilename = str(self.textFileName.text()) if len(str(self.textFileName.text()).strip()) > 0 else docxfilename
@@ -378,6 +379,11 @@ def getItemDetail(block):
                                         each_row.append(value)
                                 data.append(each_row)
     for i, row in enumerate(data):
+        if len(row) == 4:
+            row[3] = '0'
+            row.append('0')
+            data[i] = row
+
         if len(row) == 5:
             temp = row[4].split('.')
             row[4] = '0'

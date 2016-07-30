@@ -387,6 +387,11 @@ def getItemDetail(block):
                                         each_row.append(value)
                                 data.append(each_row)
     for i, row in enumerate(data):
+        if len(row) == 4:
+            row[3] = '0'
+            row.append('0')
+            data[i] = row
+            
         if len(row) == 5:
             temp = row[4].split('.')
             row[4] = '0'
